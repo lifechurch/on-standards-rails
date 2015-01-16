@@ -6,7 +6,7 @@ TODO: Write a gem description
 
 Add this line to your application's Gemfile:
 
-    `gem 'c2c-standards-rails', git: 'git://github.com/lifechurch/c2c-standards-rails.git'`
+    gem 'c2c-standards-rails', git: 'git://github.com/lifechurch/c2c-standards-rails.git'
 
 And then execute:
 
