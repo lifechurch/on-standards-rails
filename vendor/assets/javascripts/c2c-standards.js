@@ -4,14 +4,6 @@
 //= require c2c-standards/vendor/sweet-alert.min
 
 $(document).ready(function() {
-  // Code syntax highlighting.
-  hljs.initHighlightingOnLoad();
-
-  // Used to reveal code blocks.
-  $('.code-snippet').on('click', function() {
-    $(this).find('pre').show();
-    $(this).addClass('opened');
-  });
 
   // Used to destroy flash messages.
   $(document).on("click", ".flash-close", function() {
@@ -31,10 +23,4 @@ $(document).ready(function() {
                       width: "auto"
   });
 
-  swal({
-    title: "Error!",
-    text: "Here's my error message!",
-    type: "error",
-    confirmButtonText: "Cool"
-  });
 });
