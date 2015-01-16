@@ -70,8 +70,6 @@ $primary-button-font-color: white
 // This should be $primary-color on all products except Open. which should be $gray-dark
 $chosen-hover-highlight-color: $primary-color
 
-@import c2c-standards-overrides
-
 // Mixins
 @mixin font-awesome-base // Use this mixin in a ':before' to add Font Awesome characters. You must add the appropriate icon in the 'content' decleration. (e.g. content: "\f00c")
   display: inline-block
@@ -93,6 +91,9 @@ $large-width: 1025px
 
 // Foundation include. it is placed here to pass variables to overrides file yet style base elements below the foundation cascade.
 @import foundation_and_overrides
+
+// C2C Standards Overrides.
+@import c2c_standards_overrides
 
 // Typography // -------------------------------------------
 
