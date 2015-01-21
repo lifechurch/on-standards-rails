@@ -1,7 +1,7 @@
 module C2c
   module Standards
     module Rails
-      VERSION = "1.3.4"
+      VERSION = "1.3.5"
     end
   end
 end
