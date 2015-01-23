@@ -10,6 +10,7 @@
 // Pagination
 // Alerts, Flash Messages & Notification Banners
 // Tables
+// Utility Classes (keep at bottom)
 
 // Z index - List all uses of z-index here
 //
@@ -120,7 +121,7 @@ body
 h1, h2, h3, h4, .sweet-alert h2
   font-weight: 700
   color: $gray-dark
-  margin: 0.8em 0
+  margin: 1rem 0
 
 h1
   font-size: 2.25em
@@ -138,6 +139,12 @@ h4
   font-size: 1em
   line-height: 1.4
 
+h5
+  font-size: 0.875em
+  line-height: 1.4
+  font-weight: 400
+  text-transform: uppercase
+
 p, .sweet-alert p
   font-size: 1em
   line-height: 1.4
@@ -149,11 +156,15 @@ p.lede
   line-height: 1.4
 
 a
-  color: $primary-color
+  color: inherit
   text-decoration: underline
   i
     text-decoration: underline
+  &:hover
+    color: $primary-color
 
+.primary-link
+  color: $primary-color
 
 .secondary-link
   color: $gray-light
@@ -841,3 +852,12 @@ table
     background-color: $gray-super-lightest
     border-top: 1px solid $gray-super-lightest
     border-bottom: 1px solid $gray-super-lightest
+
+// Utility Classes // ------------------------------------------
+.no-margin-top
+  margin-top: 0 !important
+.no-margin-bottom
+  margin-bottom: 0 !important
+.no-margin-top-bottom
+  margin-top: 0 !important
+  margin-bottom: 0 !important
