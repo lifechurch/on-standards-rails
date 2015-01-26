@@ -1447,3 +1447,5 @@ $xxlarge-only: "#{$screen} and (min-width:#{lower-bound($xxlarge-range)}) and (m
 @import "foundation/components/reveal";
 @import "foundation/components/dropdown";
 @import "foundation/components/top-bar";
+@import "foundation/components/type";
+@import "foundation/components/visibility";
