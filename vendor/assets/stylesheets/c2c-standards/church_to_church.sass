@@ -60,6 +60,7 @@ $global-overlay: rgba($gray-darkest, 0.9)
 
 $medium-width: 641px
 $large-width: 1025px
+$xlarge-width: 1441px
 
 // Mixins
 @mixin font-awesome-base // Use this mixin in a ':before' to add Font Awesome characters. You must add the appropriate icon in the 'content' decleration. (e.g. content: "\f00c")
@@ -75,6 +76,10 @@ $large-width: 1025px
 
 @mixin media-large-up
   @media (min-width: #{$large-width})
+    @content
+
+@mixin media-xlarge-up
+  @media (min-width: #{$xlarge-width})
     @content
 
 // Overrides // ------------------------------------------
@@ -107,16 +112,18 @@ html
   font-family: $font-family
   +media-medium-up
     font-size: 100%
+  +media-xlarge-up
+    font-size: 112.5%
 
 body
-  font-family: $font-family
+  font-size: inherit
   line-height: 1
   color: $gray-dark
 
 h1, h2, h3, h4, h5, h6
   font-family: $font-family
 
-h1, h2, h3, h4, .sweet-alert h2
+h1, h2, .sweet-alert h2, h3, h4, h5
   font-weight: 700
   color: $gray-dark
   margin: 1rem 0
@@ -140,7 +147,6 @@ h4
 h5
   font-size: 0.875em
   line-height: 1.4
-  font-weight: 400
   text-transform: uppercase
 
 p, .sweet-alert p
