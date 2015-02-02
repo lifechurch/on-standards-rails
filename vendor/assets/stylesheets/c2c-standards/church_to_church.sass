@@ -8,6 +8,7 @@
 // Buttons
 // Forms
 // Tooltips
+// Tags
 // Pagination
 // Alerts, Flash Messages & Notification Banners
 // Tables
@@ -542,35 +543,11 @@ fieldset
     vertical-align: top
     margin-top: 0.75rem
 
-.field.prefix, .field.postfix
-  +clearfix
-  input, textarea, select
-    display: inline-block
-    width: auto
-  label
-    display: block
-  span
-    display: block
-    float: left
-    border: 1px solid $gray-lighter
-    padding: 0 0.5rem
-    line-height: 2.125rem
-    background-color: $gray-lightest
+input.prefix, span.postfix
+  border-radius: 0 $global-radius $global-radius 0
 
-.field.prefix
-  span
-    border-right: 0
-    +border-radius($global-radius 0 0 $global-radius)
-  input
-    +border-radius(0 $global-radius $global-radius 0)
-
-.field.postfix
-  span
-    border-left: 0
-    +border-radius(0 $global-radius $global-radius 0)
-  input
-    float: left
-    +border-radius($global-radius 0 0 $global-radius)
+input.postfix, span.prefix
+  border-radius: $global-radius 0 0 $global-radius
 
 .radio-pill-select
   display: block
@@ -655,8 +632,8 @@ fieldset.error > label
   color: white
   background: $red
   border-radius: $global-radius
-  padding-top: 1rem
-  padding-bottom: 1rem
+  padding: 1rem
+  margin-left: 0
 
 // .file-upload
 //   .button
@@ -695,6 +672,26 @@ fieldset.error > label
     font-family: $font-family
     font-size: 0.875rem
     padding: 0.3rem 0.6rem
+
+// Tag // -------------------------------------------
+span.tag
+  line-height: 1.5rem
+  border-radius: 0.75rem
+  background-color: $primary-color
+  color: $primary-button-font-color
+  font-size: 0.75rem
+  &.secondary
+    background-color: $gray-light
+    color: $gray-dark
+  &.outline
+    border: 1px solid $primary-color
+    color: $primary-color
+    background-color: transparent
+  &.small
+    font-size: 0.625rem
+    line-height: 1.25rem
+    border-radius: 0.625rem
+
 
 // Pagination // -------------------------------------------
 .pagination
