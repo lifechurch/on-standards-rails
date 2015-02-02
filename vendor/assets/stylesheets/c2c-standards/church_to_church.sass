@@ -549,6 +549,9 @@ input.prefix, span.postfix
 input.postfix, span.prefix
   border-radius: $global-radius 0 0 $global-radius
 
+input.prefix, input.postfix
+  text-align: left
+
 .radio-pill-select
   display: block
   list-style-type: none
@@ -629,11 +632,13 @@ fieldset.error > label
 
 
 .form-error-list
-  color: white
-  background: $red
+  color: $red
   border-radius: $global-radius
-  padding: 1rem
+  padding: 1rem 0
   margin-left: 0
+  color: $red
+  list-style: none
+
 
 // .file-upload
 //   .button
