@@ -674,23 +674,65 @@ fieldset.error > label
     padding: 0.3rem 0.6rem
 
 // Tag // -------------------------------------------
-span.tag
+span.tag, a.tag
   line-height: 1.5rem
   border-radius: 0.75rem
-  background-color: $primary-color
-  color: $primary-button-font-color
+  background-color: $gray-lighter
+  color: $gray-dark
   font-size: 0.75rem
-  &.secondary
-    background-color: $gray-light
-    color: $gray-dark
+  padding: 0 0.5rem
+  display: inline-block
   &.outline
-    border: 1px solid $primary-color
-    color: $primary-color
+    box-shadow: inset 0 0 0 1px $gray-lighter
     background-color: transparent
+    color: $gray
+  &.primary
+    background-color: $primary-color
+    color: $primary-button-font-color
+  &.primary.outline
+    box-shadow: inset 0 0 0 1px $primary-color
+    background-color: transparent
+    color: $primary-color
   &.small
     font-size: 0.625rem
     line-height: 1.25rem
     border-radius: 0.625rem
+
+a.tag
+  text-decoration: none
+  &:active, &:hover
+    box-shadow: $button-hover-shadow
+    background-color: lighten($gray-lighter, 2%)
+    text-decoration: none
+  &:active
+    box-shadow: none
+    background-color: $gray-lighter
+    color: $gray-dark
+  &:focus
+    outline: none
+  &.outline
+    &:hover, &:active
+      background: transparent
+      color: $primary-color
+      box-shadow: inset 0 0 0 1px $primary-color
+  &.primary
+    &:hover
+      background-color: lighten($primary-color, 7%)
+      box-shadow: $button-hover-shadow
+    &:active
+      background-color: $primary-color
+      box-shadow: none
+      color: $primary-button-font-color
+  &.primary.outline
+    &:hover
+      background-color: lighten($primary-color, 7%)
+      color: $primary-button-font-color
+      box-shadow: $button-hover-shadow
+    &:active
+      background-color: $primary-color
+      box-shadow: none
+      color: $primary-button-font-color
+
 
 
 // Pagination // -------------------------------------------
