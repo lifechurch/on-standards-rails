@@ -612,18 +612,18 @@ input.prefix, input.postfix
     display: block
 
 // Form Errors
-.field.error label,
-.field.error .field-label,
+.field.error label, .field_with_errors label,
+.field.error .field-label, .field_with_errors .field-label,
 fieldset .error .hint,
 fieldset.error > label
   color: $red
   font-weight: bold
 
-.field.error
+.field.error, .field_with_errors
   input, .chosen-single
     border-color: $red
 
-.field.error
+.field.error, .field_with_errors
   input[type="radio"] + label,
   label + input[type="radio"],
   input[type="checkbox"] + label,
