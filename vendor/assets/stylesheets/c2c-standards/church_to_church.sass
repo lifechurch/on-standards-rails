@@ -258,11 +258,11 @@ button, .button
     color: $gray-light
     &:hover
       background-color: lighten($primary-color, 7%)
-      color: white
+      color: $primary-button-font-color
       +box-shadow($button-hover-shadow)
     &:active
       background-color: $primary-color
-      color: white
+      color: $primary-button-font-color
       +box-shadow(none)
     &:disabled, &.disabled
       color: $gray-lighter
@@ -759,6 +759,7 @@ a.tag
   span:last-of-type a
     +border-radius(0 $global-radius $global-radius 0)
   a, .gap, .current
+    text-decoration: none
     position: relative
     color: $gray-light
     display: block
@@ -769,7 +770,7 @@ a.tag
     text-align: center
     line-height: 2.125rem
   a:hover
-    color: $primary-color
+    color: $chosen-hover-highlight-color
     background-color: $gray-lightest
     text-decoration: none
   .current
