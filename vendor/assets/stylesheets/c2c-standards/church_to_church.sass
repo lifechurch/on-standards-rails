@@ -30,13 +30,20 @@ $dark-blue: #7690f4
 $violet: #b075ed
 $purple: #dd81e8
 $pink: #f77292
+$red-lighter: #ffc2c1
+$red-light: #f78785
 $red: #e25552
 $red-orange: #f67d42
 $orange: #ffac48
 $orange-yellow: #ffc948
+$yellow-lighter: #fef1bc
+$yellow-light: #feea94
 $yellow: #fcdb51
+$yellow-dark: #e8bf00
 $yellow-green: #e9e45b
 $lime: #b0dd61
+$green-lighter: #b9eda4
+$green-light: #98df7a
 $green: #7fc661
 $teal: #5bd69a
 $cyan: #73e2e1
@@ -112,10 +119,6 @@ $chosen-hover-highlight-color: $primary-color
 html
   font-size: 100%
   font-family: $font-family
-  // +media-medium-up
-  //   font-size: 100%
-  +media-xlarge-up
-    font-size: 112.5%
 
 body
   font-size: inherit
@@ -783,7 +786,7 @@ a.tag
 
 // Alerts, Flash Messages & Notification Banners // -------------------------------------------
 .flash-messages
-  margin: 1rem 0
+  margin-bottom: 1rem
   z-index: 4
   overflow: hidden
   max-width: 30rem
@@ -793,27 +796,21 @@ a.tag
   position: relative
   background-color: $global-overlay
   color: white
-  margin-bottom: 1rem
+  margin-top: 1rem
   border-left: 0.5rem solid $blue
-  +border-radius($global-radius)
-  padding: 1rem
+  border-radius: $global-radius
+  padding: 0.75rem 1rem
+  font-size: 0.875rem
   +box-shadow($global-shadow)
   line-height: 1.4
   .flash-close
-    cursor: pointer
-    float: right
-    padding: 1rem
-    margin-top: -1rem
-    margin-right: -1rem
     &:after
-      +font-awesome-base
-      content: "\f00d"
       color: $gray
     &:hover:after
       color: white
   .button
     float: right
-    margin-top: -0.25rem
+    margin-top: -0.325rem
     margin-left: 1rem
     background: transparent
     +box-shadow(inset 0 0 0 1px white)
@@ -825,6 +822,68 @@ a.tag
   border-color: $yellow
 .flash-error
   border-color: $red
+
+.application-note
+  background-color: $gray-lightest
+  border-radius: $global-radius
+  padding: 0.75rem 1rem 0
+  font-size: 0.875rem
+  line-height: 1.4
+  position: relative
+  overflow: hidden
+  p
+    max-width: 36rem
+    float: left
+  p:first-of-type
+    margin-top: 0
+  p:last-of-type
+    margin-bottom: 0.75rem
+  .fa
+    color: $gray
+    margin-left: -0.25rem
+    margin-right: 0.5rem
+    font-size: 1rem
+    position: relative
+    top: 0.05rem
+    float: left
+  .close-application-note
+    color: $gray-light
+    &:hover:after
+      color: $gray-dark
+  &.warning
+    background-color: $yellow-lighter
+    .fa
+      color: $yellow
+    .close-application-note
+      color: $yellow
+      &:hover:after
+        color: $yellow-dark
+  &.success
+    background-color: $green-lighter
+    .fa
+      color: $green
+    .close-application-note
+      color: $green-light
+      &:hover:after
+        color: $green
+  &.error
+    background-color: $red-lighter
+    .fa
+      color: $red
+    .close-application-note
+      color: $red-light
+      &:hover:after
+        color: $red
+
+.flash .flash-close, .application-note .close-application-note
+  cursor: pointer
+  float: right
+  padding: 0.75rem 1rem
+  margin-top: -0.75rem
+  margin-right: -1rem
+  &:after
+    +font-awesome-base
+    content: "\f00d"
 
 .global-messages
   .flash
