@@ -642,13 +642,13 @@ fieldset.error > label
     color: inherit
     font-weight: normal
 
-
 .form-error-list
-  color: $red
+  color: $gray-dark
+  background-color: $red-lighter
   border-radius: $global-radius
-  padding: 1rem 0
+  padding: 0.75rem 1rem
+  font-size: 0.875rem
   margin-left: 0
-  color: $red
   list-style: none
 
 
@@ -684,7 +684,7 @@ fieldset.error > label
 .tooltipster-default
   background: $global-overlay
   border: none
-  +border-radius($global-radius)
+  border-radius: $global-radius
   .tooltipster-content
     font-family: $font-family
     font-size: 0.875rem
