@@ -341,8 +341,9 @@ textarea,
   line-height: 1.4
   color: $gray-dark
   background: white
-  +border-radius($global-radius)
+  border-radius: $global-radius
   +box-shadow($input-shadow)
+  +transition(none)
   &:focus
     border: 1px solid $primary-color
     outline: none

@@ -624,7 +624,7 @@ $xxlarge-only: "#{$screen} and (min-width:#{lower-bound($xxlarge-range)}) and (m
 // $input-font-color: rgba(0,0,0,0.75);
 // $input-font-size: rem-calc(14);
 // $input-bg-color: $white;
-// $input-focus-bg-color: scale-color($white, $lightness: -2%);
+$input-focus-bg-color: white
 // $input-border-color: scale-color($white, $lightness: -20%);
 // $input-focus-border-color: scale-color($white, $lightness: -40%);
 // $input-border-style: solid;
