@@ -10,7 +10,7 @@
 // Tooltips
 // Tags
 // Pagination
-// Alerts, Flash Messages & Notification Banners
+// Alerts, Flash Messages, Notification Banners & Modals
 // Tables
 // Utility Classes (keep at bottom)
 
@@ -799,7 +799,7 @@ a.tag
     background-color: $primary-color
     border-color: $primary-color
 
-// Alerts, Flash Messages & Notification Banners // -------------------------------------------
+// Alerts, Flash Messages, Notification Banners & Modals // -------------------------------------------
 .flash-messages
   margin-bottom: 1rem
   z-index: 4
@@ -974,6 +974,28 @@ a.tag
 
 .sweet-overlay
   background-color: $global-overlay
+
+.reveal-modal, dialog
+  .close-reveal-modal
+    text-decoration: none
+    padding-left: 1rem
+    padding-right: 1rem
+    &:hover
+      color: $gray-dark
+  footer, header
+    margin-left: -1rem
+    margin-right: -1rem
+  header
+    border-bottom: 1px solid $gray-lighter
+    padding: 0 1rem 1rem
+    h1, h2, h3, h4, h5, p, ul, ol
+      &:first-of-type
+        margin-top: 0
+      &:last-of-type
+        margin-bottom: 0
+  footer
+    border-top: 1px solid $gray-lighter
+    padding: 1rem 1rem 0
 
 // Tables // ============================
 table

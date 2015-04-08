@@ -228,17 +228,17 @@ $xxlarge-only: "#{$screen} and (min-width:#{lower-bound($xxlarge-range)}) and (m
 // $subheader-bottom-margin: .5rem;
 
 // A general <small> styling
-// $small-font-size: 60%;
+$small-font-size: 0.75rem;
 // $small-font-color: scale-color($header-font-color, $lightness: 35%);
 
 // We use these to style paragraphs
 // $paragraph-font-family: inherit;
 // $paragraph-font-weight: $font-weight-normal;
 // $paragraph-font-size: 1rem;
-// $paragraph-line-height: 1.6;
+$paragraph-line-height: 1.4;
 // $paragraph-margin-bottom: rem-calc(20);
 // $paragraph-aside-font-size: rem-calc(14);
-// $paragraph-aside-line-height: 1.35;
+$paragraph-aside-line-height: 1.4;
 // $paragraph-aside-font-style: italic;
 // $paragraph-text-rendering: optimizeLegibility;
 
@@ -647,13 +647,13 @@ $input-focus-bg-color: white
 // $legend-padding: rem-calc(0 3);
 
 // We use these to style the prefix and postfix input elements
-// $input-prefix-bg: scale-color($white, $lightness: -5%);
-// $input-prefix-border-color: scale-color($white, $lightness: -20%);
-// $input-prefix-border-size: 1px;
-// $input-prefix-border-type: solid;
-// $input-prefix-overflow: hidden;
-// $input-prefix-font-color: $oil;
-// $input-prefix-font-color-alt: $white;
+$input-prefix-bg: $gray-lightest;
+$input-prefix-border-color: $gray-lighter;
+$input-prefix-border-size: 1px;
+$input-prefix-border-type: solid;
+$input-prefix-overflow: hidden;
+$input-prefix-font-color: $gray-dark;
+$input-prefix-font-color-alt: white;
 
 // We use this setting to turn on/off HTML5 number spinners (the up/down arrows)
 // $input-number-spinners: true;
@@ -1085,22 +1085,22 @@ $input-focus-bg-color: white
 // $include-html-reveal-classes: $include-html-classes;
 
 // We use these to control the style of the reveal overlay.
-// $reveal-overlay-bg: rgba($black, .45);
-// $reveal-overlay-bg-old: $black;
+$reveal-overlay-bg: $global-overlay;
+$reveal-overlay-bg-old: $gray-darkest;
 
 // We use these to control the style of the modal itself.
 // $reveal-modal-bg: $white;
-// $reveal-position-top: rem-calc(100);
+$reveal-position-top: rem-calc(64);
 // $reveal-default-width: 80%;
-// $reveal-modal-padding: rem-calc(20);
-// $reveal-box-shadow: 0 0 10px rgba($black,.4);
+$reveal-modal-padding: rem-calc(10.66666);
+$reveal-box-shadow: none;
 
 // We use these to style the reveal close button
 // $reveal-close-font-size: rem-calc(40);
 // $reveal-close-top: rem-calc(8);
-// $reveal-close-side: rem-calc(11);
-// $reveal-close-color: $base;
-// $reveal-close-weight: $font-weight-bold;
+$reveal-close-side: 0;
+$reveal-close-color: $gray-light;
+$reveal-close-weight: 100;
 
 // We use this to set the default radius used throughout the core.
 // $reveal-radius: $global-radius;
@@ -1108,8 +1108,8 @@ $input-focus-bg-color: white
 
 // We use these to control the modal border
 // $reveal-border-style: solid;
-// $reveal-border-width: 1px;
-// $reveal-border-color: $steel;
+$reveal-border-width: 0px;
+$reveal-border-color: $gray-lighter;
 
 // $reveal-modal-class: "reveal-modal";
 // $close-reveal-modal-class: "close-reveal-modal";
@@ -1418,7 +1418,7 @@ $input-focus-bg-color: white
 // $topbar-menu-icon-color-toggled: $jumbo;
 
 // Transitions and breakpoint styles
-// $topbar-transition-speed: 300ms;
+$topbar-transition-speed: 0ms;
 // Using rem-calc for the below breakpoint causes issues with top bar
 // $topbar-breakpoint: #{lower-bound($medium-range)}; // Change to 9999px for always mobile layout
 // $topbar-media-query: $medium-up;
