@@ -1,6 +1,8 @@
-# C2c::Standards::Rails
+# C2C::Standards::Rails
 
-TODO: Write a gem description
+C2C::Standards::Rails is gem to make your life easier when applying the C2C style to our applications. You can get started by following the instructions below.
+
+http://c2c-standards.herokuapp.com
 
 ## Installation
 
@@ -29,9 +31,6 @@ add typekit to application.html.haml
 <script type="text/javascript" src="//use.typekit.net/nba0bde.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 ```
-
-
-TODO: Write usage instructions here
 
 ## Contributing
 
