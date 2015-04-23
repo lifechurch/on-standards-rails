@@ -327,6 +327,7 @@ label, .field-label
 input[type="text"],
 input[type="password"],
 input[type="email"],
+input[type="date"],
 textarea,
 .chosen-container .chosen-single,
 .chosen-container .chosen-choices
@@ -501,6 +502,170 @@ input[type="submit"]
       div b:before
         content: "\f0d8"
         line-height: 2rem
+
+// Datepicker
+.datepicker-inline
+  width: 220px
+
+.datepicker.datepicker-rtl
+  direction: rtl
+  table tr td span
+    float: right
+
+.datepicker-dropdown
+  top: 0
+  left: 0
+
+.datepicker
+  padding: 2px
+  border-radius: 4px
+  direction: ltr
+  margin-top: 2px
+  margin-bottom: 2px
+  thead
+    background-color: transparent
+  tr:hover
+    border: none
+    background-color: transparent
+  > div
+    display: none
+  &.days .datepicker-days, &.months .datepicker-months, &.years .datepicker-years
+    display: block
+  table
+    border: none
+    margin: 0
+    -webkit-touch-callout: none
+    -webkit-user-select: none
+    -khtml-user-select: none
+    -moz-user-select: none
+    -ms-user-select: none
+    user-select: none
+    tr
+      td, th
+        text-align: center
+        width: 30px
+        height: 30px
+        border-radius: $global-radius
+        border: none
+      td span
+        display: block
+        width: 23%
+        height: 45px
+        line-height: 45px
+        float: left
+        margin: 1%
+        cursor: pointer
+        border-radius: 4px
+        &:hover
+          background: #eeeeee
+
+  .today
+    color: $gray-dark
+    background-color: $gray-lighter
+    &:hover, &:focus, &:hover:focus, &:active, &:hover:active
+      color: $gray-dark
+      background-color: $gray-lightest
+    &.disabled
+      color: $gray-light
+      &:hover, &:focus, &:hover:focus, &:active, &:hover:active
+        color: $gray-light
+        background-color: transparent
+
+  .day, .month, .year
+    &:hover, &.focused, &:focus, &:active
+      background: $gray-lightest
+      cursor: pointer
+    &.old, &.new
+      color: $gray-light
+    &.disabled
+      background: none
+      cursor: default
+      &:hover
+        background: none
+        cursor: default
+    &.active
+      color: $primary-button-font-color
+      background-color: $primary-color
+      &:hover, &:focus, &:active
+        color: $primary-button-font-color
+        background-color: lighten($primary-color, 7%)
+      &.disabled
+        color: #ffffff
+        background-color: #428bca
+        &:hover, &:focus, &:active
+          color: #ffffff
+          background-color: #428bca
+          border-color: #357ebd
+          text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25)
+
+  &.dropdown-menu
+    position: absolute
+    top: 100%
+    left: 0
+    z-index: 1000
+    float: left
+    display: none
+    min-width: 160px
+    list-style: none
+    background-color: white
+    border: 1px solid $gray-lighter
+    border-radius: $global-radius
+    box-shadow: $global-shadow
+    background-clip: padding-box
+    font-size: 12px
+    line-height: 1.4
+    th
+      padding: 0px 5px
+
+  &.datepicker-inline th, &.dropdown-menu td, &.datepicker-inline td
+    padding: 0px 5px
+
+.datepicker
+  .datepicker-switch
+    width: 145px
+  thead tr:first-child th, tfoot tr th
+    cursor: pointer
+  thead tr:first-child th:hover, tfoot tr th:hover
+    background: $gray-lightest
+  .cw
+    font-size: 10px
+    width: 12px
+    padding: 0 2px 0 5px
+    vertical-align: middle
+  thead tr:first-child .cw
+    cursor: default
+    background-color: transparent
+
+.input-group.date .input-group-addon
+  cursor: pointer
+
+.input-daterange
+  width: 100%
+  input
+    text-align: center
+    &:first-child
+      border-radius: 3px 0 0 3px
+    &:last-child
+      border-radius: 0 3px 3px 0
+  .input-group-addon
+    width: auto
+    min-width: 16px
+    padding: 4px 5px
+    font-weight: normal
+    line-height: 1.42857143
+    text-align: center
+    text-shadow: 0 1px 0 #fff
+    vertical-align: middle
+    background-color: #eeeeee
+    border: solid #cccccc
+    border-width: 1px 0
+    margin-left: -5px
+    margin-right: -5px
+
+
+.table-striped .datepicker table tr
+  td, th
+    background-color: transparent
 
 // Fieldsets
 
