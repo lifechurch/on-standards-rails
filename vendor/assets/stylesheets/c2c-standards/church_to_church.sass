@@ -710,22 +710,28 @@ span.tag, a.tag
   &.primary
     background-color: $primary-color
     color: $primary-button-font-color
+    .close
+      color: darken($primary-color, 20%)
   &.primary.outline
     box-shadow: inset 0 0 0 1px $primary-color
     background-color: transparent
     color: $primary-color
+    .close
+      color: $primary-color
   &.small
     line-height: 1.2rem
     border-radius: 0.625rem
     font-size: 0.75rem
     padding-top: 1px
   .close
-    width: 1rem
+    padding-left: 0.125rem
     height: 1rem
     text-align: center
     color: $gray-light
     text-decoration: none
-    right: 0.25rem
+    display: inline-block
+    position: relative
+    top: 1px
     &:before
       font-size: 1.1rem
       content: "×"
@@ -737,6 +743,8 @@ a.tag
     box-shadow: $button-hover-shadow
     background-color: lighten($gray-lighter, 2%)
     text-decoration: none
+    .close
+      color: $gray-dark
   &:active
     box-shadow: none
     background-color: $gray-lighter
@@ -748,14 +756,20 @@ a.tag
       background: transparent
       color: $primary-color
       box-shadow: inset 0 0 0 1px $primary-color
+      .close
+        color: $primary-color
   &.primary
     &:hover
       background-color: lighten($primary-color, 7%)
       box-shadow: $button-hover-shadow
+      .close
+        color: $primary-button-font-color
     &:active
       background-color: $primary-color
       box-shadow: none
       color: $primary-button-font-color
+      .close
+        color: $primary-button-font-color
   &.primary.outline
     &:hover
       background-color: lighten($primary-color, 7%)
