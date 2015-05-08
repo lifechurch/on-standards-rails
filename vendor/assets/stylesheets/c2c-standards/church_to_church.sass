@@ -220,6 +220,7 @@ button, .button
   text-decoration: none
   font-size: 1rem
   line-height: 2.25rem
+  white-space: nowrap
   background-color: $gray-lighter
   color: $gray-dark
   cursor: pointer
@@ -1188,7 +1189,12 @@ table
       border-right: none
   td
     border-bottom: dotted 1px $gray-lighter
-    padding: 0.5rem
+    padding: 0 0.5rem
+    height: 33px
+    button, .button
+      margin-left: 0.125rem
+      &:first-of-type
+        margin-left: 0
   thead tr:hover
     border-top: none
     background: transparent
@@ -1196,6 +1202,9 @@ table
     background-color: $gray-super-lightest
     border-top: 1px solid $gray-super-lightest
     border-bottom: 1px solid $gray-super-lightest
+  .action-column
+    white-space: nowrap
+    width: 1px
 
 // Utility Classes // ------------------------------------------
 .no-margin-top
