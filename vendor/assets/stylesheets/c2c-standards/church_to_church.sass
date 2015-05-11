@@ -213,19 +213,20 @@ button, .button
   box-sizing: border-box
   margin: 0
   border: none
-  +border-radius($global-radius)
+  border-radius: $global-radius
   padding: 0 1.25rem
   text-align: center
   vertical-align: top
   text-decoration: none
   font-size: 1rem
-  line-height: 2.25rem
+  line-height: 36px
   white-space: nowrap
   background-color: $gray-lighter
   color: $gray-dark
   cursor: pointer
   +transition(none)
-  &:active, &:hover
+  &:active, &:hover, &:focus
+    outline: none
     +box-shadow($button-hover-shadow)
     background-color: lighten($gray-lighter, 2%)
     color: $gray-dark
@@ -234,8 +235,6 @@ button, .button
     +box-shadow(none)
     background-color: $gray-lighter
     color: $gray-dark
-  &:focus
-    outline: none
 
   &:disabled, &.disabled
     +opacity(0.45)
@@ -248,7 +247,7 @@ button, .button
   &.primary
     background-color: $primary-color
     color: $primary-button-font-color
-    &:hover
+    &:hover, &:focus
       background-color: lighten($primary-color, 7%)
       +box-shadow($button-hover-shadow)
     &:active
@@ -277,18 +276,19 @@ button, .button
         +box-shadow(inset 0 0 0 1px $gray-lighter)
 
   &.large
-    padding: 0.375em 1.5em
+    padding: 0 1.5em
     font-size: 1.1875em
+    line-height: 44px
 
   &.small
     padding: 0 0.875rem
-    line-height: 1.875rem
     font-size: 0.875rem
+    line-height: 30px
 
   &.tiny
     padding: 0 0.625rem
-    line-height: 1.5rem
     font-size: 0.875rem
+    line-height: 24px
 
 // Forms // --------------------------------------------
 
@@ -862,13 +862,14 @@ fieldset.error > label
 
 // Tag // -------------------------------------------
 span.tag, a.tag
-  line-height: 1.45rem
+  line-height: 1.5rem
   border-radius: 0.75rem
   background-color: $gray-lighter
   color: $gray-dark
   font-size: 0.875rem
-  padding: 1px 0.5rem 0
+  padding: 0 0.5rem
   display: inline-block
+  white-space: nowrap
   &.outline
     box-shadow: inset 0 0 0 1px $gray-lighter
     background-color: transparent
@@ -897,7 +898,7 @@ span.tag, a.tag
     text-decoration: none
     display: inline-block
     position: relative
-    top: 1px
+    top: 2px
     &:before
       font-size: 1.1rem
       content: "×"
@@ -1183,8 +1184,9 @@ table
   th
     border-right: solid 1px $gray-lighter
     border-bottom: solid 1px $gray-lighter
-    padding: 0.3125rem 0.5rem
+    padding: 0 0.5rem
     font-size: 0.875rem
+    height: 32px
     &:last-of-type
       border-right: none
   td
@@ -1192,9 +1194,13 @@ table
     padding: 0 0.5rem
     height: 33px
     button, .button
-      margin-left: 0.125rem
-      &:first-of-type
-        margin-left: 0
+      margin-right: 0.125rem
+    .tag
+      margin: 0.25rem 0.125rem 0.25rem 0
+  .tag-group
+    padding-top: 0.25rem
+    .tag
+      margin-top: 0
   thead tr:hover
     border-top: none
     background: transparent
@@ -1205,6 +1211,67 @@ table
   .action-column
     white-space: nowrap
     width: 1px
+    text-align: right
+  .sortable
+    position: relative
+  .sortable:before
+    +font-awesome-base
+    content: "\f0dc"
+    float: right
+    color: $gray-lighter
+    position: relative
+    top: 2px
+  .sort-up.sortable:before
+    content: "\f0de"
+    color: $primary-color
+    top: 6px
+  .sort-down.sortable:before
+    content: "\f0dd"
+    color: $primary-color
+    top: -4px
+  .filter
+    text-decoration: none
+    line-height: 1.5rem
+    border-radius: 0.75rem
+    color: #494A4E
+    font-size: 0.875rem
+    display: inline-block
+    white-space: nowrap
+    &:after
+      +font-awesome-base
+      content: "\f0b0"
+      color: $gray-lighter
+    &.active
+      padding: 0 0.5rem
+      background-color: $primary-color
+      color: $primary-button-font-color
+      &:after
+        content: "×"
+        padding-left: .125rem
+        color: darken($primary-color, 20%)
+      &:hover
+        background-color: lighten($primary-color, 7%)
+        box-shadow: $button-hover-shadow
+        &:after
+          color: $primary-button-font-color
+  .grabbable
+    white-space: nowrap
+    width: 1px
+  th.grabbable
+    border-right: none
+    + th
+      padding-left: 0
+  td.grabbable
+    padding: 0
+    + td
+      padding-left: 0
+  .grabber
+    color: $gray-lighter
+    padding: 6px 0.5rem 6px 0
+    cursor: ns-resize
+    &:after
+      +font-awesome-base
+      content: "\f0c9"
 
 // Utility Classes // ------------------------------------------
 .no-margin-top
@@ -1214,3 +1281,5 @@ table
 .no-margin-top-bottom
   margin-top: 0 !important
   margin-bottom: 0 !important
+.no-wrap
+  white-space: nowrap
