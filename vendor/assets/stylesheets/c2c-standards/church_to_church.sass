@@ -116,6 +116,8 @@ $chosen-hover-highlight-color: $primary-color
 // 800 = Extra bold
 // 900 = Black
 
+$global-line-height: 1.4
+
 html
   font-size: 100%
   font-family: $font-family
@@ -128,41 +130,41 @@ body
 h1, h2, h3, h4, h5, h6
   font-family: $font-family
 
-h1, h2, .sweet-alert h2, h3, h4, h5
+h1, h2, .sweet-alert h2, h3, h4
   font-weight: 700
   color: $gray-dark
   margin: 1rem 0
 
 h1
-  font-size: 2.25em
+  font-size: 28px
   line-height: 1.2
 
 h2, .sweet-alert h2
-  font-size: 1.75em
+  font-size: 23px
   line-height: 1.2
 
 h3
-  font-size: 1.1875em
-  line-height: 1.4
+  font-size: 19px
+  line-height: $global-line-height
 
 h4
-  font-size: 1em
-  line-height: 1.4
+  font-size: 1rem
+  line-height: $global-line-height
 
-h5
-  font-size: 0.875em
-  line-height: 1.4
+h5, .section-header
+  font-size: 0.875rem
+  line-height: $global-line-height
   text-transform: uppercase
+  color: $gray-light
 
 p, .sweet-alert p
-  font-size: 1em
-  line-height: 1.4
+  font-size: 1rem
+  line-height: $global-line-height
   margin: 1rem 0
   font-weight: 400
 
 p.lede
-  font-size: 1.1875em
-  line-height: 1.4
+  font-size: 19px
 
 a
   color: inherit
@@ -181,21 +183,21 @@ a
     color: $primary-color
 
 ol, ul
-  margin-top: 1em
+  margin-top: 1rem
   margin-bottom: 1rem
 
 li
-  font-size: 1em
-  line-height: 1.4
+  font-size: 1rem
+  line-height: $global-line-height
 
 hr
   border-color: $gray-lighter
 
 span
-  line-height: 1.4
+  line-height: $global-line-height
 
 small
-  font-size: .875rem
+  font-size: 0.875rem
 
 strong
   font-weight: 700
