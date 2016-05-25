@@ -1,3 +1,5 @@
+# JMO IN DA HOUSE
+
 # C2C::Standards::Rails
 
 C2C::Standards::Rails is gem to make your life easier when applying the C2C style to our applications. You can get started by following the instructions below.
