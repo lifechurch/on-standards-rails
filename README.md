@@ -39,3 +39,10 @@ add typekit to application.html.haml
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+
+## Change Log
+
+### V1.5.1
+- Update Gray Color Spectrum to 10 point step percentage variables. 
+- Now use `$gray-%` where % is a 5 or multiple of 10 for gray colors.

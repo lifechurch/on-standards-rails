@@ -50,14 +50,30 @@ $cyan: #73e2e1
 $network-blue: #00b1ed
 
 // Gray Spectrum
-$gray-super-lightest: #f7f7f7
-$gray-lightest: #f1f1f3
-$gray-lighter: #e1e1e3
-$gray-light: #a5a6aa
-$gray: #6c6d73
-$gray-dark: #494a4e
-$gray-darker: #313234
-$gray-darkest: #1d1d1f
+$black: #29292A
+$gray: #404041
+$gray-90: #535354
+$gray-80: #666667
+$gray-70: #79797A
+$gray-60: #8C8C8D
+$gray-50: #9F9FA0
+$gray-40: #B2B2B3
+$gray-30: #C6C6C6
+$gray-20: #D8D8D9
+$gray-10: #ECECEC
+$gray-5: #F5F5F5
+$white: #FFFFFF
+
+// Gray Overrides - DO NOT USE
+$gray-super-lightest: $gray-5
+$gray-lightest: $gray-10
+$gray-lighter: $gray-20
+$gray-light: $gray-50
+$gray-dark: $gray-90
+$gray-darker: $gray
+$gray-darkest: $black
+
+
 
 // Other constants
 $global-radius: 2px
@@ -66,6 +82,7 @@ $global-shadow: 0 2px 3px rgba(100,100,110,0.1)
 $input-shadow: inset 0 1px 2px rgba(100, 100, 110, 0.1)
 $top-bar-height: 60px
 $global-overlay: rgba($gray-darkest, 0.9)
+$font-color: $gray
 
 $medium-width: 40.063em
 $large-width: 64.063em
@@ -125,14 +142,14 @@ html
 body
   font-size: inherit
   line-height: 1
-  color: $gray-dark
+  color: $font-color 
 
 h1, h2, h3, h4, h5, h6
   font-family: $font-family
 
 h1, h2, .sweet-alert h2, h3, h4
   font-weight: 700
-  color: $gray-dark
+  color: $font-color
   margin: 1rem 0
 
 h1
@@ -164,7 +181,7 @@ h5, .section-header
   font-size: 0.875rem
   line-height: $global-line-height
   text-transform: uppercase
-  color: $gray-light
+  color: $font-color
 
 p, .sweet-alert p
   font-size: 1rem
@@ -233,7 +250,7 @@ button, .button
   line-height: 36px
   white-space: nowrap
   background-color: $gray-lighter
-  color: $gray-dark
+  color: $font-color
   cursor: pointer
   vertical-align: middle
   +transition(none)
@@ -241,12 +258,12 @@ button, .button
     outline: none
     +box-shadow($button-hover-shadow)
     background-color: lighten($gray-lighter, 2%)
-    color: $gray-dark
+    color: $font-color
     text-decoration: none
   &:active
     +box-shadow(none)
     background-color: $gray-lighter
-    color: $gray-dark
+    color: $font-color
 
   &:disabled, &.disabled
     +opacity(0.45)
@@ -326,7 +343,7 @@ form
       max-width: inherit
 
 label, .field-label
-  color: $gray-dark
+  color: $font-color
   font-size: 0.875rem
   margin-bottom: 0.25rem
   margin-right: 1rem
@@ -353,7 +370,7 @@ textarea,
   font-size: 1rem
   font-family: $font-family
   line-height: 1.4
-  color: $gray-dark
+  color: $font-color
   background: white
   border-radius: $global-radius
   +box-shadow($input-shadow)
@@ -443,7 +460,7 @@ input[type="submit"]
         line-height: 2.125rem
         color: $gray-lighter
     &:hover div b:before
-      color: $gray-dark
+      color: $font-color
   .chosen-search
     input[type="text"]
       margin: 0
@@ -489,7 +506,7 @@ input[type="submit"]
           content: "×"
           line-height: 1
         &:hover
-          color: $gray-dark
+          color: $font-color
     li.search-field input[type=text]
       margin: 1px 0 0
       border: none
@@ -497,10 +514,10 @@ input[type="submit"]
       min-height: inherit
       height: inherit
       line-height: 1.4
-      color: $gray-dark
+      color: $font-color
       font-family: $font-family
   .chosen-drop .result-selected
-    color: $gray-dark
+    color: $font-color
 
 .chosen-container-active
   .chosen-single, .chosen-choices
@@ -573,10 +590,10 @@ input[type="submit"]
           background: #eeeeee
 
   .today
-    color: $gray-dark
+    color: $font-color
     background-color: $gray-lighter
     &:hover, &:focus, &:hover:focus, &:active, &:hover:active
-      color: $gray-dark
+      color: $font-color
       background-color: $gray-lightest
     &.disabled
       color: $gray-light
@@ -723,7 +740,7 @@ fieldset
       position: relative
       top: 1px
       font-size: 0.875rem
-      color: $gray-dark
+      color: $font-color
       margin-top: 0
 
 .field
@@ -825,7 +842,7 @@ fieldset.error > label
     font-weight: normal
 
 .form-error-list
-  color: $gray-dark
+  color: $font-color
   background-color: $red-lighter
   border-radius: $global-radius
   padding: 0.75rem 1rem
@@ -877,7 +894,7 @@ span.tag, a.tag
   line-height: 1.5rem
   border-radius: 0.75rem
   background-color: $gray-lighter
-  color: $gray-dark
+  color: $font-color
   font-size: 0.875rem
   padding: 0 0.5rem
   display: inline-block
@@ -923,11 +940,11 @@ a.tag
     background-color: lighten($gray-lighter, 2%)
     text-decoration: none
     .close
-      color: $gray-dark
+      color: $font-color
   &:active
     box-shadow: none
     background-color: $gray-lighter
-    color: $gray-dark
+    color: $font-color
   &:focus
     outline: none
   &.outline
@@ -1023,7 +1040,7 @@ a.tag
     +box-shadow(inset 0 0 0 1px white)
     color: white
     &:hover
-      color: $gray-dark
+      color: $font-color
       background: white
 .flash-warn
   border-left: 0.5rem solid $yellow
@@ -1061,7 +1078,7 @@ a.tag
   .close-application-note
     color: $gray-light
     &:hover:after
-      color: $gray-dark
+      color: $font-color
   &.text-center
     text-align: center
     padding-left: 2.5rem
@@ -1145,17 +1162,17 @@ a.tag
       box-shadow: none
     &.cancel
       background-color: $gray-lighter !important
-      color: $gray-dark
+      color: $font-color
       &:hover
         background-color: lighten($gray-lighter, 2%) !important
-        color: $gray-dark
+        color: $font-color
         box-shadow: $button-hover-shadow
       &:active, &:focus
         box-shadow: none !important
         background-color: $gray-lighter !important
-        color: $gray-dark
+        color: $font-color
   p
-    color: $gray-dark
+    color: $font-color
     margin: 0
   h2
     margin: 0.5rem 0 0
@@ -1183,7 +1200,7 @@ a.tag
     padding-left: 1rem
     padding-right: 1rem
     &:hover
-      color: $gray-dark
+      color: $font-color
   footer, header
     margin-left: -1rem
     margin-right: -1rem
