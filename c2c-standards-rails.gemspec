@@ -4,13 +4,13 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'c2c/standards/rails/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "c2c-standards-rails"
-  spec.version       = C2c::Standards::Rails::VERSION
-  spec.authors       = ["Marcus Morrison"]
-  spec.email         = ["marcus.a.morrison@gmail.com"]
-  spec.summary       = "Style Guide for Church to Church"
-  spec.description   = "Style Guide for Church to Church"
-  spec.homepage      = "http://c2c-standards.herokuapp.com/"
+  spec.name          = "on-standards"
+  spec.version       = ON::Standards::Rails::VERSION
+  spec.authors       = ["Scott Hill"]
+  spec.email         = ["scott.hill@life.church"]
+  spec.summary       = "Style Standards for Life Church Open Network Team"
+  spec.description   = "Style Standards for Life Church Open Network Team"
+  spec.homepage      = "http://on-standards.herokuapp.com/"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
@@ -25,3 +25,4 @@ Gem::Specification.new do |spec|
   spec.add_dependency('foundation-rails', ['~> 5.4.3'])
   spec.add_development_dependency "rake"
 end
+

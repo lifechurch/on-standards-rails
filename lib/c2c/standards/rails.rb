@@ -1,6 +1,6 @@
 require "rails/version"
 
-module C2c
+module ON
   module Standards
     module Rails
       class Engine < ::Rails::Engine
