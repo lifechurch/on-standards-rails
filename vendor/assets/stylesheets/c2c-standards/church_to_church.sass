@@ -1,0 +1,1323 @@
+// Church to Church - Base Style Sheet
+//
+// Table of Contents
+//
+// Variables
+// Overrides
+// Typography
+// Buttons
+// Forms
+// Tooltips
+// Tags
+// Pagination
+// Alerts, Flash Messages, Notification Banners & Modals
+// Tables
+// Utility Classes (keep at bottom)
+
+// Z index - List all uses of z-index here
+//
+// Dropdowns: 2
+// Input elements: 1
+// Pagination: 1
+// Flash messages: 4
+
+
+// Variables // ------------------------------------------
+
+// Rainbow Spectrum
+$blue: #64b4f2
+$dark-blue: #7690f4
+$violet: #b075ed
+$purple: #dd81e8
+$pink: #f77292
+$red-lighter: #ffc2c1
+$red-light: #f78785
+$red: #e25552
+$red-orange: #f67d42
+$orange: #ffac48
+$orange-yellow: #ffc948
+$yellow-lighter: #fef1bc
+$yellow-light: #feea94
+$yellow: #fcdb51
+$yellow-dark: #e8bf00
+$yellow-green: #e9e45b
+$lime: #b0dd61
+$green-lighter: #b9eda4
+$green-light: #98df7a
+$green: #7fc661
+$teal: #5bd69a
+$cyan: #73e2e1
+$network-blue: #00b1ed
+
+// Gray Spectrum
+$black: #29292A
+$gray: #404041
+$gray-90: #535354
+$gray-80: #666667
+$gray-70: #79797A
+$gray-60: #8C8C8D
+$gray-50: #9F9FA0
+$gray-40: #B2B2B3
+$gray-30: #C6C6C6
+$gray-20: #D8D8D9
+$gray-10: #ECECEC
+$gray-5: #F5F5F5
+$white: #FFFFFF
+
+// Gray Overrides - DO NOT USE
+$gray-super-lightest: $gray-5
+$gray-lightest: $gray-10
+$gray-lighter: $gray-20
+$gray-light: $gray-50
+$gray-dark: $gray-90
+$gray-darker: $gray
+$gray-darkest: $black
+
+
+
+// Other constants
+$global-radius: 2px
+$font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif
+$global-shadow: 0 2px 3px rgba(100,100,110,0.1)
+$input-shadow: inset 0 1px 2px rgba(100, 100, 110, 0.1)
+$top-bar-height: 60px
+$global-overlay: rgba($gray-darkest, 0.9)
+$font-color: $gray
+
+$medium-width: 40.063em
+$large-width: 64.063em
+$xlarge-width: 90.063em
+
+// Mixins
+@mixin font-awesome-base // Use this mixin in a ':before' to add Font Awesome characters. You must add the appropriate icon in the 'content' decleration. (e.g. content: "\f00c")
+  display: inline-block
+  font: normal normal normal 14px/1 FontAwesome
+  font-size: inherit
+  text-rendering: auto
+  -webkit-font-smoothing: antialiased
+
+@mixin media-medium-up
+  @media (min-width: #{$medium-width})
+    @content
+
+@mixin media-large-up
+  @media (min-width: #{$large-width})
+    @content
+
+@mixin media-xlarge-up
+  @media (min-width: #{$xlarge-width})
+    @content
+
+// Overrides // ------------------------------------------
+
+// Application colors, override these to fit the appropriate app.
+$primary-color: $blue
+$secondary-color: $green
+// This should be white on all products except Open. which should be $gray-dark
+$primary-button-font-color: white
+// This should be $primary-color on all products except Open. which should be $gray-dark
+$chosen-hover-highlight-color: $primary-color
+
+@import c2c-overrides
+
+@import foundation_and_overrides
+
+// Typography // -------------------------------------------
+
+// Typekit Proxima Nova size reference
+// 100 = Thin
+// 300 = Light
+// 400 = Regular
+// 600 = Semibold
+// 700 = Bold
+// 800 = Extra bold
+// 900 = Black
+
+$global-line-height: 1.4
+
+html
+  font-size: 100%
+  font-family: $font-family
+
+body
+  font-size: inherit
+  line-height: 1
+  color: $font-color 
+
+h1, h2, h3, h4, h5, h6
+  font-family: $font-family
+
+h1, h2, .sweet-alert h2, h3, h4
+  font-weight: 700
+  color: $font-color
+  margin: 1rem 0
+
+h1
+  font-size: 28px
+  line-height: 1.2
+
+h1.large
+  font-size: 33px
+
+h1.xlarge
+  font-size: 40px
+
+h1.xxlarge
+  font-size: 48px
+
+h2, .sweet-alert h2
+  font-size: 23px
+  line-height: 1.2
+
+h3
+  font-size: 19px
+  line-height: $global-line-height
+
+h4
+  font-size: 1rem
+  line-height: $global-line-height
+
+h5, .section-header
+  font-size: 0.875rem
+  line-height: $global-line-height
+  text-transform: uppercase
+  color: $font-color
+
+p, .sweet-alert p
+  font-size: 1rem
+  line-height: $global-line-height
+  margin: 1rem 0
+  font-weight: 400
+
+p.lede
+  font-size: 19px
+
+a
+  color: inherit
+  text-decoration: underline
+  i
+    text-decoration: underline
+  &:hover
+    color: $primary-color
+
+.primary-link
+  color: $primary-color
+
+.secondary-link
+  color: $gray-light
+  &:hover
+    color: $primary-color
+
+ol, ul
+  margin-top: 1rem
+  margin-bottom: 1rem
+
+li
+  font-size: 1rem
+  line-height: $global-line-height
+
+hr
+  border-color: $gray-lighter
+
+span
+  line-height: $global-line-height
+
+small
+  font-size: 0.875rem
+
+strong
+  font-weight: 700
+
+button, input[type="submit"]
+  font-family: $font-family
+
+// Buttons // --------------------------------------------------
+
+$button-hover-shadow: 0 1px 2px rgba(100, 100, 110, 0.15)
+$button-active-shadow: inset 0 1px 2px rgba(100, 100, 110, 0.15)
+
+button, .button
+  display: inline-block
+  box-sizing: border-box
+  margin: 0
+  border: none
+  border-radius: $global-radius
+  padding: 0 1.25rem
+  text-align: center
+  vertical-align: top
+  text-decoration: none
+  font-size: 1rem
+  line-height: 36px
+  white-space: nowrap
+  background-color: $gray-lighter
+  color: $font-color
+  cursor: pointer
+  vertical-align: middle
+  +transition(none)
+  &:active, &:hover, &:focus
+    outline: none
+    +box-shadow($button-hover-shadow)
+    background-color: lighten($gray-lighter, 2%)
+    color: $font-color
+    text-decoration: none
+  &:active
+    +box-shadow(none)
+    background-color: $gray-lighter
+    color: $font-color
+
+  &:disabled, &.disabled
+    +opacity(0.45)
+    cursor: default
+    color: $gray
+    background-color: $gray-lighter
+    &:hover
+      +box-shadow(none)
+
+  &.primary
+    background-color: $primary-color
+    color: $primary-button-font-color
+    &:hover, &:focus
+      background-color: lighten($primary-color, 7%)
+      +box-shadow($button-hover-shadow)
+    &:active
+      background-color: $primary-color
+      +box-shadow(none)
+    &:disabled, &.disabled
+      background-color: $primary-color
+
+  &.white
+    background-color: white
+    +box-shadow(inset 0 0 0 1px $gray-lighter)
+    color: $gray-light
+    &:hover
+      background-color: lighten($primary-color, 7%)
+      color: $primary-button-font-color
+      +box-shadow($button-hover-shadow)
+    &:active
+      background-color: $primary-color
+      color: $primary-button-font-color
+      +box-shadow(none)
+    &:disabled, &.disabled
+      color: $gray-lighter
+      +opacity(1)
+      &:hover
+        background-color: white
+        +box-shadow(inset 0 0 0 1px $gray-lighter)
+
+  &.large
+    padding: 0 1.5em
+    font-size: 1.1875em
+    line-height: 44px
+
+  &.small
+    padding: 0 0.875rem
+    font-size: 0.875rem
+    line-height: 30px
+
+  &.tiny
+    padding: 0 0.625rem
+    font-size: 0.875rem
+    line-height: 24px
+
+// Forms // --------------------------------------------
+
+form
+  fieldset:last-of-type
+    border-bottom: none
+    margin-bottom: 1.5rem
+
+.field
+  margin-bottom: 1.5rem
+  width: 100%
+  +media-medium-up
+    width: auto
+    max-width: 27.5rem
+    &.short
+      width: 260px
+      max-width: inherit
+    &.shorter
+      width: 130px
+      max-width: inherit
+    &.long
+      width: 100%
+      max-width: inherit
+
+label, .field-label
+  color: $font-color
+  font-size: 0.875rem
+  margin-bottom: 0.25rem
+  margin-right: 1rem
+  display: inline-block
+  line-height: 1
+
+.field-label
+  display: block
+  margin-bottom: 0.5rem
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="date"],
+textarea,
+.chosen-container .chosen-single,
+.chosen-container .chosen-choices
+  display: block
+  min-height: 2.25rem
+  width: 100%
+  margin: 0
+  border: 1px solid $gray-lighter
+  padding: 0.25rem 0.5rem
+  font-size: 1rem
+  font-family: $font-family
+  line-height: 1.4
+  color: $font-color
+  background: white
+  border-radius: $global-radius
+  +box-shadow($input-shadow)
+  +transition(none)
+  &:focus
+    border: 1px solid $primary-color
+    outline: none
+    +box-shadow(none)
+
+select
+  display: block
+  margin: 0
+  width: auto
+
+input[type="submit"]
+  @extend .button
+  -webkit-appearance: none
+  background-color: $primary-color
+  color: $primary-button-font-color
+  &:hover, &:focus
+    color: $primary-button-font-color
+    background-color: lighten($primary-color, 7%)
+    +box-shadow($button-hover-shadow)
+  &:active
+    color: $primary-button-font-color
+    background-color: $primary-color
+    +box-shadow(none)
+  &:disabled, &.disabled
+    background-color: $primary-color
+
+.hint, fieldset .field label // Use this on span elements underneath input fields when a label doesn't add enough clarity
+  font-size: 0.75rem
+  color: $gray-light
+  margin-top: 0.3rem
+
+// Chosen.js overides
+
+.chosen-container
+  display: block
+  .chosen-drop
+    +box-shadow($global-shadow)
+    +border-radius($global-radius)
+    z-index: 2
+    margin-top: 2px
+    border: 1px solid $gray-lighter
+  .chosen-search
+    padding: 0.25rem 0.5rem
+  .chosen-results
+    margin: 0
+    padding: 0
+    font-size: 0.875rem
+    li
+      position: relative
+      padding: 0.25rem 0.5rem 0.25rem 1.6rem
+      line-height: 1.4
+      &.highlighted
+        background-color: $gray-lightest
+        color: $chosen-hover-highlight-color
+        +background-image(none)
+    li.group-result
+      padding-left: 0.5rem
+    li.group-option
+      padding-left: 1.6rem
+    li.no-results
+      background: $gray-lightest
+  .result-selected
+    &:before
+      +font-awesome-base
+      position: absolute
+      left: 0.5rem
+      top: 0.55rem
+      content: "\f00c"
+      font-size: 0.75rem
+  .chosen-default span
+    color: $gray-light
+
+.chosen-container-single
+  .chosen-single
+    text-decoration: none
+    > span
+      margin-top: 2px
+    div b
+      background-image: none !important
+      &:before
+        +font-awesome-base
+        content: "\f0d7"
+        line-height: 2.125rem
+        color: $gray-lighter
+    &:hover div b:before
+      color: $font-color
+  .chosen-search
+    input[type="text"]
+      margin: 0
+      border: 1px solid $gray-lighter
+      +border-radius($global-radius)
+      background-image: none !important
+      font-size: 0.875rem
+      min-height: 1.875rem
+    &:before
+      +font-awesome-base
+      content: "\f002"
+      position: absolute
+      top: 12px
+      right: 16px
+      color: $gray-lighter
+
+.chosen-container-multi
+  .chosen-choices
+    padding-top: 5px
+    padding-bottom: 0
+    li.search-choice
+      margin: 0 0.25rem 5px 0
+      border: none
+      padding: 0 1.35rem 0 0.5rem
+      line-height: 24px
+      font-size: 0.875rem
+      background: $gray-lighter
+      +box-shadow(none)
+      border-radius: 2rem
+      span
+        position: relative
+        top: 1px
+      .search-choice-close
+        background: none
+        width: 1rem
+        height: 1rem
+        text-align: center
+        color: $gray-light
+        text-decoration: none
+        right: 0.25rem
+        &:before
+          font-size: 1.1rem
+          content: "×"
+          line-height: 1
+        &:hover
+          color: $font-color
+    li.search-field input[type=text]
+      margin: 1px 0 0
+      border: none
+      padding: 0
+      min-height: inherit
+      height: inherit
+      line-height: 1.4
+      color: $font-color
+      font-family: $font-family
+  .chosen-drop .result-selected
+    color: $font-color
+
+.chosen-container-active
+  .chosen-single, .chosen-choices
+    border-color: $primary-color
+    +box-shadow(none)
+  &.chosen-with-drop
+    .chosen-single,
+    .chosen-choices
+      +background-image(none)
+      border-color: $primary-color
+      +border-radius($global-radius)
+      div b:before
+        content: "\f0d8"
+        line-height: 2rem
+
+// Datepicker
+.datepicker-inline
+  width: 220px
+
+.datepicker.datepicker-rtl
+  direction: rtl
+  table tr td span
+    float: right
+
+.datepicker-dropdown
+  top: 0
+  left: 0
+
+.datepicker
+  padding: 2px
+  border-radius: 4px
+  direction: ltr
+  margin-top: 2px
+  margin-bottom: 2px
+  thead
+    background-color: transparent
+  tr:hover
+    border: none
+    background-color: transparent
+  > div
+    display: none
+  &.days .datepicker-days, &.months .datepicker-months, &.years .datepicker-years
+    display: block
+  table
+    border: none
+    margin: 0
+    -webkit-touch-callout: none
+    -webkit-user-select: none
+    -khtml-user-select: none
+    -moz-user-select: none
+    -ms-user-select: none
+    user-select: none
+    tr
+      td, th
+        text-align: center
+        width: 30px
+        height: 30px
+        border-radius: $global-radius
+        border: none
+      td span
+        display: block
+        width: 23%
+        height: 45px
+        line-height: 45px
+        float: left
+        margin: 1%
+        cursor: pointer
+        border-radius: 4px
+        &:hover
+          background: #eeeeee
+
+  .today
+    color: $font-color
+    background-color: $gray-lighter
+    &:hover, &:focus, &:hover:focus, &:active, &:hover:active
+      color: $font-color
+      background-color: $gray-lightest
+    &.disabled
+      color: $gray-light
+      &:hover, &:focus, &:hover:focus, &:active, &:hover:active
+        color: $gray-light
+        background-color: transparent
+
+  .day, .month, .year
+    &:hover, &.focused, &:focus, &:active
+      background: $gray-lightest
+      cursor: pointer
+    &.old, &.new
+      color: $gray-light
+    &.disabled
+      background: none
+      cursor: default
+      &:hover
+        background: none
+        cursor: default
+    &.active
+      color: $primary-button-font-color
+      background-color: $primary-color
+      &:hover, &:focus, &:active
+        color: $primary-button-font-color
+        background-color: lighten($primary-color, 7%)
+      &.disabled
+        color: #ffffff
+        background-color: #428bca
+        &:hover, &:focus, &:active
+          color: #ffffff
+          background-color: #428bca
+          border-color: #357ebd
+          text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25)
+
+  &.dropdown-menu
+    position: absolute
+    top: 100%
+    left: 0
+    z-index: 1000
+    float: left
+    display: none
+    min-width: 160px
+    list-style: none
+    background-color: white
+    border: 1px solid $gray-lighter
+    border-radius: $global-radius
+    box-shadow: $global-shadow
+    background-clip: padding-box
+    font-size: 12px
+    line-height: 1.4
+    th
+      padding: 0px 5px
+
+  &.datepicker-inline th, &.dropdown-menu td, &.datepicker-inline td
+    padding: 0px 5px
+
+.datepicker
+  .datepicker-switch
+    width: 145px
+  thead tr:first-child th, tfoot tr th
+    cursor: pointer
+  thead tr:first-child th:hover, tfoot tr th:hover
+    background: $gray-lightest
+  .cw
+    font-size: 10px
+    width: 12px
+    padding: 0 2px 0 5px
+    vertical-align: middle
+  thead tr:first-child .cw
+    cursor: default
+    background-color: transparent
+
+.input-group.date .input-group-addon
+  cursor: pointer
+
+.input-daterange
+  width: 100%
+  input
+    text-align: center
+    &:first-child
+      border-radius: 3px 0 0 3px
+    &:last-child
+      border-radius: 0 3px 3px 0
+  .input-group-addon
+    width: auto
+    min-width: 16px
+    padding: 4px 5px
+    font-weight: normal
+    line-height: 1.42857143
+    text-align: center
+    text-shadow: 0 1px 0 #fff
+    vertical-align: middle
+    background-color: #eeeeee
+    border: solid #cccccc
+    border-width: 1px 0
+    margin-left: -5px
+    margin-right: -5px
+
+
+.table-striped .datepicker table tr
+  td, th
+    background-color: transparent
+
+// Fieldsets
+
+$label-margin: 11.25rem
+
+fieldset
+  margin: 0
+  border: none
+  border-bottom: 1px dotted $gray-lighter
+  padding: 1.5rem 0 0
+  > label, .field-label
+    position: absolute
+    max-width: $label-margin
+    margin-top: 0.75rem
+    line-height: 1
+
+.fieldset-row
+  margin-left: $label-margin
+  +legacy-pie-clearfix
+  &.two-column, &.three-column
+    input
+      width: 100%
+    > div
+      width: 50%
+      float: left
+      padding-left: 0.75rem
+      padding-right: 0.75rem
+      &:first-of-type
+        padding-left: 0
+      &:last-of-type
+        padding-right: 0
+    &.two-column
+      > div
+        width: 50%
+    &.three-column
+      > div
+        width: 33.33%
+  input[type="radio"], input[type="checkbox"]
+    margin-top: 0.75rem
+    margin-bottom: 0.75rem
+    + label
+      position: relative
+      top: 1px
+      font-size: 0.875rem
+      color: $font-color
+      margin-top: 0
+
+.field
+  clear: none
+
+.field.inline
+  input, textarea, select, .chosen-container
+    display: inline-block
+    width: auto
+  label
+    vertical-align: top
+    margin-top: 0.75rem
+
+input.prefix, span.postfix
+  border-radius: 0 $global-radius $global-radius 0
+
+input.postfix, span.prefix
+  border-radius: $global-radius 0 0 $global-radius
+
+input.prefix, input.postfix
+  text-align: left
+
+ul.radio-pill-select
+  display: block
+  list-style-type: none
+  margin: 0 auto
+  padding: 0
+  position: relative
+  z-index: 1
+  li
+    display: block
+    float: left
+    &:first-of-type label
+      border-radius: $global-radius 0 0 $global-radius
+      border-left: 1px solid $gray-lighter
+      &.active
+        box-shadow: none
+        border-color: $primary-color
+    &:last-of-type label
+      border-radius: 0 $global-radius $global-radius 0
+  input
+    display: none
+  label
+    font-size: 1rem
+    line-height: 2rem
+    background-color: white
+    padding: 0 1.25rem
+    border-top: 1px solid $gray-lighter
+    border-bottom: 1px solid $gray-lighter
+    border-right: 1px solid $gray-lighter
+    margin: 0
+    &:hover
+      cursor: pointer
+      color: $primary-color
+      background-color: $gray-lightest
+    &.active
+      color: $primary-button-font-color
+      background-color: $primary-color
+      border-color: $primary-color
+      box-shadow: -1px 0 $primary-color
+
+.radio-pill-header
+  text-align: center
+  position: relative
+  width: 100%
+  max-width: inherit
+  &:after
+    content: " "
+    height: 1px
+    width: 100%
+    background-color: $gray-lighter
+    display: block
+    position: absolute
+    bottom: 36%
+  .radio-pill-select
+    display: inline-block
+  label
+    margin-right: 0
+    display: block
+
+// Form Errors
+.field.error label, .field_with_errors label,
+.field.error .field-label, .field_with_errors .field-label,
+fieldset .error .hint,
+fieldset.error > label
+  color: $red
+  font-weight: bold
+
+.field.error, .field_with_errors
+  input, .chosen-single
+    border-color: $red
+
+.field.error, .field_with_errors
+  input[type="radio"] + label,
+  label + input[type="radio"],
+  input[type="checkbox"] + label,
+  label + input[type="checkbox"]
+    color: inherit
+    font-weight: normal
+
+.form-error-list
+  color: $font-color
+  background-color: $red-lighter
+  border-radius: $global-radius
+  padding: 0.75rem 1rem
+  font-size: 0.875rem
+  margin-left: 0
+  list-style: none
+
+
+// .file-upload
+//   .button
+//     display: inline-block
+//     text-align: center
+//     text-decoration: none
+//     color: #999
+//     @include border-radius(3px)
+//     line-height: 28px
+//     padding: 5px 20px
+//     cursor: pointer
+//     background-color: #CCC
+//     border: 1px solid #D1D1D1
+//     @include background-image(linear-gradient(to top, #DDDDDD, #F1F1F1))
+//     &:hover
+//       @include background-image(linear-gradient(to top, #E3E3E3, #F4F4F4))
+
+//   #file-name
+//     display: inline-block
+//     line-height: 40px
+//     margin-left: 10px
+//     position: relative
+//     top: -15px
+
+//   .hidden
+//     height: 0px
+//     width: 0px
+//     overflow: hidden
+
+// Tooltips // -------------------------------------------
+.tooltipster-default
+  background: $global-overlay
+  border: none
+  border-radius: $global-radius
+  .tooltipster-content
+    font-family: $font-family
+    font-size: 0.875rem
+    padding: 0.3rem 0.6rem
+
+// Tag // -------------------------------------------
+span.tag, a.tag
+  line-height: 1.5rem
+  border-radius: 0.75rem
+  background-color: $gray-lighter
+  color: $font-color
+  font-size: 0.875rem
+  padding: 0 0.5rem
+  display: inline-block
+  white-space: nowrap
+  &.outline
+    box-shadow: inset 0 0 0 1px $gray-lighter
+    background-color: transparent
+    color: $gray-light
+  &.primary
+    background-color: $primary-color
+    color: $primary-button-font-color
+    .close
+      color: darken($primary-color, 20%)
+  &.primary.outline
+    box-shadow: inset 0 0 0 1px $primary-color
+    background-color: transparent
+    color: $primary-color
+    .close
+      color: $primary-color
+  &.small
+    line-height: 1.2rem
+    border-radius: 0.625rem
+    font-size: 0.75rem
+    padding-top: 1px
+  .close
+    padding-left: 0.125rem
+    height: 1rem
+    text-align: center
+    color: $gray-light
+    text-decoration: none
+    display: inline-block
+    position: relative
+    top: 2px
+    &:before
+      font-size: 1.1rem
+      content: "×"
+      line-height: 1
+
+a.tag
+  text-decoration: none
+  &:active, &:hover
+    box-shadow: $button-hover-shadow
+    background-color: lighten($gray-lighter, 2%)
+    text-decoration: none
+    .close
+      color: $font-color
+  &:active
+    box-shadow: none
+    background-color: $gray-lighter
+    color: $font-color
+  &:focus
+    outline: none
+  &.outline
+    &:hover, &:active
+      background: transparent
+      color: $primary-color
+      box-shadow: inset 0 0 0 1px $primary-color
+      .close
+        color: $primary-color
+  &.primary
+    &:hover
+      background-color: lighten($primary-color, 7%)
+      box-shadow: $button-hover-shadow
+      .close
+        color: $primary-button-font-color
+    &:active
+      background-color: $primary-color
+      box-shadow: none
+      color: $primary-button-font-color
+      .close
+        color: $primary-button-font-color
+  &.primary.outline
+    &:hover
+      background-color: lighten($primary-color, 7%)
+      color: $primary-button-font-color
+      box-shadow: $button-hover-shadow
+    &:active
+      background-color: $primary-color
+      box-shadow: none
+      color: $primary-button-font-color
+
+
+
+// Pagination // -------------------------------------------
+.pagination
+  display: inline-block
+  +border-radius($global-radius)
+  span
+    display: inline
+  span:first-of-type a
+    +border-radius($global-radius 0 0 $global-radius)
+  span:last-of-type a
+    +border-radius(0 $global-radius $global-radius 0)
+  a, .gap, .current
+    text-decoration: none
+    position: relative
+    color: $gray-light
+    display: block
+    float: left
+    margin-left: -1px
+    border: 1px solid $gray-lighter
+    width: 2rem
+    text-align: center
+    line-height: 2.125rem
+  a:hover
+    color: $chosen-hover-highlight-color
+    background-color: $gray-lightest
+    text-decoration: none
+  .current
+    z-index: 1
+    color: $primary-button-font-color
+    background-color: $primary-color
+    border-color: $primary-color
+
+// Alerts, Flash Messages, Notification Banners & Modals // -------------------------------------------
+.flash-messages
+  margin-bottom: 1rem
+  z-index: 4
+  overflow: hidden
+  max-width: 30rem
+
+.flash
+  display: block
+  position: relative
+  background-color: $global-overlay
+  color: white
+  margin-top: 1rem
+  border-radius: $global-radius
+  padding: 0.75rem 1rem
+  font-size: 0.875rem
+  +box-shadow($global-shadow)
+  line-height: 1.4
+  .flash-close
+    &:after
+      color: $gray
+    &:hover:after
+      color: white
+  .button
+    float: right
+    margin-top: -0.325rem
+    margin-left: 1rem
+    background: transparent
+    +box-shadow(inset 0 0 0 1px white)
+    color: white
+    &:hover
+      color: $font-color
+      background: white
+.flash-warn
+  border-left: 0.5rem solid $yellow
+.flash-error
+  border-left: 0.5rem solid $red
+
+.application-note
+  background-color: $gray-lightest
+  border-radius: $global-radius
+  padding: 0.75rem 2.5rem 0.75rem 1rem
+  font-size: 0.875rem
+  line-height: 1.4
+  position: relative
+  overflow: hidden
+  min-height: 43px
+  p
+    max-width: 36rem
+    margin-top: 0.75rem
+    margin-bottom: 0.75rem
+  p:first-of-type
+    margin-top: 0
+  p:last-of-type
+    margin-bottom: 0
+  p .button, p button
+    margin-left: 0.5rem
+    margin-right: 0.5rem
+  .fa
+    color: $gray
+    margin-left: -0.25rem
+    margin-right: 0.5rem
+    font-size: 1rem
+    position: relative
+    top: 0.1rem
+    float: left
+  .close-application-note
+    color: $gray-light
+    &:hover:after
+      color: $font-color
+  &.text-center
+    text-align: center
+    padding-left: 2.5rem
+    p
+      margin-left: auto
+      margin-right: auto
+  &.warning
+    background-color: $yellow-lighter
+    .fa
+      color: $yellow
+    .close-application-note
+      color: $yellow
+      &:hover:after
+        color: $yellow-dark
+  &.success
+    background-color: $green-lighter
+    .fa
+      color: $green
+    .close-application-note
+      color: $green-light
+      &:hover:after
+        color: $green
+  &.error
+    background-color: $red-lighter
+    .fa
+      color: $red
+    .close-application-note
+      color: $red-light
+      &:hover:after
+        color: $red
+
+.flash .flash-close, .application-note .close-application-note
+  cursor: pointer
+  position: absolute
+  padding: 0.75rem 1rem
+  right: 0
+  top: 0
+  &:after
+    +font-awesome-base
+    content: "\f00d"
+
+.placeholder-note
+  border: 1px solid $gray-lighter
+  border-radius: $global-radius
+  color: $gray-light
+  text-align: center
+  padding: 1rem
+  p
+    max-width: 42rem
+    margin-left: auto
+    margin-right: auto
+
+.global-messages
+  .flash
+    margin: 0
+    border-radius: 0
+    border-left: 0
+  .flash-warn
+    border-bottom: 0.25rem solid $yellow
+  .flash-error
+    border-bottom: 0.25rem solid $red
+
+.sweet-alert
+  border-radius: $global-radius
+  font-family: $font-family
+  padding: 1rem
+  button
+    background-color: $primary-color !important
+    border-radius: $global-radius
+    padding: 0 1.25rem
+    line-height: 2rem
+    font-weight: 400
+    margin: 1.25rem .25rem 0.5rem
+    &:hover
+      color: white
+      background-color: lighten($primary-color, 7%) !important
+      box-shadow: $button-hover-shadow !important
+    &:active, &:focus
+      background-color: $primary-color !important
+      color: white
+      box-shadow: none
+    &.cancel
+      background-color: $gray-lighter !important
+      color: $font-color
+      &:hover
+        background-color: lighten($gray-lighter, 2%) !important
+        color: $font-color
+        box-shadow: $button-hover-shadow
+      &:active, &:focus
+        box-shadow: none !important
+        background-color: $gray-lighter !important
+        color: $font-color
+  p
+    color: $font-color
+    margin: 0
+  h2
+    margin: 0.5rem 0 0
+  .icon.success
+    border-color: $green
+    .line
+      background-color: $green
+    .placeholder
+      border-color: rgba($green, 0.4)
+  .icon.warning
+    border-color: rgba($yellow, 0.4)
+    .body, .dot
+      background-color: $yellow
+  .icon.error
+    border-color: rgba($red, 0.4)
+    .line
+      background-color: $red
+
+.sweet-overlay
+  background-color: $global-overlay
+
+.reveal-modal, dialog
+  .close-reveal-modal
+    text-decoration: none
+    padding-left: 1rem
+    padding-right: 1rem
+    &:hover
+      color: $font-color
+  footer, header
+    margin-left: -1rem
+    margin-right: -1rem
+  header
+    border-bottom: 1px solid $gray-lighter
+    padding: 0 1rem 1rem
+    h1, h2, h3, h4, h5, p, ul, ol
+      &:first-of-type
+        margin-top: 0
+      &:last-of-type
+        margin-bottom: 0
+  footer
+    border-top: 1px solid $gray-lighter
+    padding: 1rem 1rem 0
+
+// Tables // ============================
+table
+  border-spacing: 0
+  th
+    border-right: solid 1px $gray-lighter
+    border-bottom: solid 1px $gray-lighter
+    padding: 0 0.5rem
+    font-size: 0.875rem
+    height: 32px
+    &:last-of-type
+      border-right: none
+  td
+    border-bottom: dotted 1px $gray-lighter
+    padding: 0 0.5rem
+    height: 33px
+    button, .button
+      margin-right: 0.125rem
+    .tag
+      margin: 0.25rem 0.125rem 0.25rem 0
+  .tag-group
+    padding-top: 0.25rem
+    .tag
+      margin-top: 0
+  thead tr:hover
+    border-top: none
+    background: transparent
+  tr:hover
+    background-color: $gray-super-lightest
+    border-top: 1px solid $gray-super-lightest
+    border-bottom: 1px solid $gray-super-lightest
+  .action-column
+    white-space: nowrap
+    width: 1px
+    text-align: right
+  .sortable
+    position: relative
+  .sortable:before
+    +font-awesome-base
+    content: "\f0dc"
+    float: right
+    color: $gray-lighter
+    position: relative
+    top: 2px
+  .sort-up.sortable:before
+    content: "\f0de"
+    color: $primary-color
+    top: 6px
+  .sort-down.sortable:before
+    content: "\f0dd"
+    color: $primary-color
+    top: -4px
+  .filter
+    text-decoration: none
+    line-height: 1.5rem
+    border-radius: 0.75rem
+    color: #494A4E
+    font-size: 0.875rem
+    display: inline-block
+    white-space: nowrap
+    &:after
+      +font-awesome-base
+      content: "\f0b0"
+      color: $gray-lighter
+    &.active
+      padding: 0 0.5rem
+      background-color: $primary-color
+      color: $primary-button-font-color
+      &:after
+        content: "×"
+        padding-left: .125rem
+        color: darken($primary-color, 20%)
+      &:hover
+        background-color: lighten($primary-color, 7%)
+        box-shadow: $button-hover-shadow
+        &:after
+          color: $primary-button-font-color
+  .grabbable
+    white-space: nowrap
+    width: 1px
+  th.grabbable
+    border-right: none
+    + th
+      padding-left: 0
+  td.grabbable
+    padding: 0
+    + td
+      padding-left: 0
+  .grabber
+    color: $gray-lighter
+    padding: 6px 0.5rem 6px 0
+    cursor: ns-resize
+    &:after
+      +font-awesome-base
+      content: "\f0c9"
+
+// Utility Classes // ------------------------------------------
+.no-margin-top
+  margin-top: 0 !important
+.no-margin-bottom
+  margin-bottom: 0 !important
+.no-margin-top-bottom
+  margin-top: 0 !important
+  margin-bottom: 0 !important
+.no-wrap
+  white-space: nowrap
