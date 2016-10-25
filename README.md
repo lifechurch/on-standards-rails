@@ -8,15 +8,11 @@ http://on-standards.herokuapp.com
 
 Add this line to your application's Gemfile:
 
-    gem 'c2c-standards-rails', git: 'git://github.com/lifechurch/c2c-standards-rails.git'
+    gem 'on-standards-rails'
 
 And then execute:
 
-    $ bundle
-
-Or install it yourself as:
-
-    Need to push to rubygems
+    $ bundle install
 
 ## Usage
 
@@ -27,10 +23,6 @@ add to application.sass
 `@import c2c-standards`
 
 add typekit to application.html.haml
-```
-<script type="text/javascript" src="//use.typekit.net/nba0bde.js"></script>
-<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-```
 
 ## Contributing
 
@@ -40,9 +32,9 @@ add typekit to application.html.haml
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
 
-
 ## Change Log
 
 ### V1.5.1
 - Update Gray Color Spectrum to 10 point step percentage variables. 
 - Now use `$gray-%` where % is a 5 or multiple of 10 for gray colors.
+- Final V1 Update
