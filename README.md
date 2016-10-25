@@ -1,8 +1,8 @@
-# C2C::Standards::Rails
+# ON::Standards::Rails
 
-C2C::Standards::Rails is gem to make your life easier when applying the C2C style to our applications. You can get started by following the instructions below.
+ON::Standards::Rails is gem to make your life easier when applying the ON style to our applications. You can get started by following the instructions below.
 
-http://c2c-standards.herokuapp.com
+http://on-standards.herokuapp.com
 
 ## Installation
 

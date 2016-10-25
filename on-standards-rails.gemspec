@@ -1,10 +1,10 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'c2c/standards/rails/version'
+require 'on/standards/rails/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "on-standards"
+  spec.name          = "on-standards-rails"
   spec.version       = ON::Standards::Rails::VERSION
   spec.authors       = ["Scott Hill"]
   spec.email         = ["scott.hill@life.church"]
