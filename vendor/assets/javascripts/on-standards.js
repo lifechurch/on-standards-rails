@@ -1,7 +1,7 @@
 //= require foundation
-//= require c2c-standards/vendor/jquery.tooltipster.min
-//= require c2c-standards/vendor/chosen.jquery.min
-//= require c2c-standards/vendor/sweet-alert.min
+//= require on-standards/vendor/jquery.tooltipster.min
+//= require on-standards/vendor/chosen.jquery.min
+//= require on-standards/vendor/sweet-alert.min
 
 $(document).ready(function() {
 

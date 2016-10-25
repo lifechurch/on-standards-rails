@@ -17,10 +17,10 @@ And then execute:
 ## Usage
 
 Add to application.js
-`//= require c2c-standards`
+`//= require on-standards`
 
 add to application.sass
-`@import c2c-standards`
+`@import on-standards`
 
 add typekit to application.html.haml
 
