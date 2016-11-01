@@ -15833,6 +15833,7 @@ const Modal = (($) => {
 
       $(this._dialog).on(Event.MOUSEDOWN_DISMISS, () => {
         $(this._element).one(Event.MOUSEUP_DISMISS, (event) => {
+          console.log("Here");
           if ($(event.target).is(this._element)) {
             this._ignoreBackdropClick = true
           }
@@ -16357,7 +16358,7 @@ const OffCanvas = (($) => {
         $.proxy(this.hide, this)
       )
 
-      $(this._dialog).on(Event.MOUSEDOWN_DISMISS, () => {
+      $(this._backdrop).on(Event.MOUSEDOWN_DISMISS, () => {
         $(this._element).one(Event.MOUSEUP_DISMISS, (event) => {
           if ($(event.target).is(this._element)) {
             this._ignoreBackdropClick = true
@@ -16392,8 +16393,8 @@ const OffCanvas = (($) => {
 
       $(this._element).removeClass(ClassName.IN)
 
-      $(this._element).off(Event.CLICK_DISMISS)
-      $(this._dialog).off(Event.MOUSEDOWN_DISMISS)
+      $(this._backdrop).off(Event.CLICK_DISMISS)
+      $(this._backdrop).off(Event.MOUSEDOWN_DISMISS)
 
       if (Util.supportsTransitionEnd() &&
          ($(this._element).hasClass(ClassName.FADE))) {
@@ -16510,10 +16511,8 @@ const OffCanvas = (($) => {
     }
 
     _hideOffCanvas() {
-      this._element.style.display = 'none'
       this._showBackdrop(() => {
         $(document.body).removeClass(ClassName.OPEN)
-        this._resetAdjustments()
         $(this._element).trigger(Event.HIDDEN)
       })
     }
@@ -16541,7 +16540,7 @@ const OffCanvas = (($) => {
 
         $(this._backdrop).appendTo(document.body)
 
-        $(this._element).on(Event.CLICK_DISMISS, (event) => {
+        $(this._backdrop).on(Event.CLICK_DISMISS, (event) => {
           if (this._ignoreBackdropClick) {
             this._ignoreBackdropClick = false
             return
@@ -16600,70 +16599,7 @@ const OffCanvas = (($) => {
     }
 
 
-    // ----------------------------------------------------------------------
-    // the following methods are used to handle overflowing modals
-    // todo (fat): these should probably be refactored out of modal.js
-    // ----------------------------------------------------------------------
-
-    // _handleUpdate() {
-    //   this._adjustDialog()
-    // }
-
-    // _adjustDialog() {
-    //   let isModalOverflowing =
-    //     this._element.scrollHeight > document.documentElement.clientHeight
-
-    //   if (!this._isBodyOverflowing && isModalOverflowing) {
-    //     this._element.style.paddingLeft = `${this._scrollbarWidth}px`
-    //   }
-
-    //   if (this._isBodyOverflowing && !isModalOverflowing) {
-    //     this._element.style.paddingRight = `${this._scrollbarWidth}px~`
-    //   }
-    // }
-
-    // _resetAdjustments() {
-    //   this._element.style.paddingLeft = ''
-    //   this._element.style.paddingRight = ''
-    // }
-
-    // _checkScrollbar() {
-    //   let fullWindowWidth = window.innerWidth
-    //   if (!fullWindowWidth) { // workaround for missing window.innerWidth in IE8
-    //     let documentElementRect = document.documentElement.getBoundingClientRect()
-    //     fullWindowWidth =
-    //       documentElementRect.right - Math.abs(documentElementRect.left)
-    //   }
-    //   this._isBodyOverflowing = document.body.clientWidth < fullWindowWidth
-    //   this._scrollbarWidth = this._getScrollbarWidth()
-    // }
-
-    // _setScrollbar() {
-    //   let bodyPadding = parseInt(
-    //     $(Selector.FIXED_CONTENT).css('padding-right') || 0,
-    //     10
-    //   )
-
-    //   this._originalBodyPadding = document.body.style.paddingRight || ''
-
-    //   if (this._isBodyOverflowing) {
-    //     document.body.style.paddingRight =
-    //       `${bodyPadding + this._scrollbarWidth}px`
-    //   }
-    // }
-
-    // _resetScrollbar() {
-    //   document.body.style.paddingRight = this._originalBodyPadding
-    // }
-
-    // _getScrollbarWidth() { // thx d.walsh
-    //   let scrollDiv = document.createElement('div')
-    //   scrollDiv.className = ClassName.SCROLLBAR_MEASURER
-    //   document.body.appendChild(scrollDiv)
-    //   let scrollbarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth
-    //   document.body.removeChild(scrollDiv)
-    //   return scrollbarWidth
-    // }
+   
 
 
     // static
