@@ -1,0 +1,157 @@
+// Button variants
+//
+// Easily pump out default styles, as well as :hover, :focus, :active,
+// and disabled options for all buttons
+
+@function button-highlight($color) {
+  @return tint($color, 20%);
+}
+
+@function button-press($color) {
+  @return shade($color, 20%);
+}
+
+
+
+@mixin button-variant($color, $background, $border) {
+  color: $color;
+  background-color: $background;
+  border-color: $border;
+  &:focus,
+  &.focus {
+    color: $color;
+  }
+  &.disabled,
+  &:disabled {
+    &:focus,
+    &.focus {
+      background-color: $background;
+      border-color: $border;
+      color: $color;
+    }
+    @include hover {
+      background-color: $background;
+      border-color: $border;
+      color: $color;
+    }
+  }
+}
+
+
+@mixin alternate-button-variant($color, $background, $border) {
+  $highlight-background: button-highlight($background);
+  $highlight-border: button-highlight($border);
+  $press-background: button-press($background);
+  $press-border: button-press($background);
+  color: $color;
+  background-color: $background;
+  border-color: $border;
+
+  @include hover {
+    color: $color;
+    background-color: $highlight-background;
+    border-color: $highlight-background;
+    box-shadow: $box-shadow-1;
+  }
+
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    color: $color;
+    background-color: $press-background;
+    border-color: $press-border;
+    // Remove the gradient for the pressed/active state
+    background-image: none;
+
+    &:hover,
+    &:focus,
+    &.focus {
+      color: $color;
+      background-color: $press-background;
+      border-color: $press-border;
+      box-shadow: none;
+    }
+  }
+
+  &.disabled,
+  &:disabled {
+    &:focus,
+    &.focus {
+      background-color: $background;
+      border-color: $border;
+    }
+    @include hover {
+      background-color: $background;
+      border-color: $border;
+    }
+    &:hover {
+      box-shadow: none;
+    }
+  }
+}
+
+@mixin button-outline-variant($color, $hover-text-color: #fff) {
+  $highlight-color: tint($color, 20%);
+  $press-color: shade($color, 20%);
+  color: $color;
+  background-image: none;
+  background-color: transparent;
+  border-color: $color;
+
+  @include hover {
+    color: $hover-text-color;
+    background-color: $highlight-color;
+    border-color: $highlight-color;
+    box-shadow: $box-shadow-1;
+  }
+
+  &:focus,
+  &.focus {
+    box-shadow: inset 0 0 0 1px $color;
+    &:hover {
+      background-color: $highlight-color;
+      border-color: $highlight-color;
+      box-shadow: $box-shadow-1;
+    }
+  }
+
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    color: $hover-text-color;
+    background-color: $press-color;
+    border-color: $press-color;
+    // Remove the gradient for the pressed/active state
+    background-image: none;
+
+    &:hover,
+    &:focus,
+    &.focus {
+      color: $hover-text-color;
+      background-color: $press-color;
+      border-color: $press-color;
+      box-shadow: none;
+    }
+  }
+
+  &.disabled,
+  &:disabled {
+    &:focus,
+    &.focus {
+      border-color: $color;
+    }
+    @include hover {
+      border-color: $color;
+      color: $color;
+      background: transparent;
+    }
+  }
+}
+
+// Button sizes
+@mixin button-size($padding-y, $padding-x, $font-size, $line-height, $border-radius) {
+  padding: $padding-y $padding-x ($padding-y - 1) $padding-x;
+  font-size: $font-size;
+  line-height: $line-height;
+  @include border-radius($border-radius);
+}

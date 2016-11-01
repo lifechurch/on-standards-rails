@@ -1,0 +1,67 @@
+/*!
+ * on Standards v2.0.alpha (http://on-standards.herokuapp.com)
+ * Copyright 2016 Life Church
+ * Maifest file for on-standards library
+ */
+
+// Additional functions to supplement the build-ins.
+@import "on-standards/functions";
+
+// Core variables and mixins
+@import "on-standards/colors";
+@import "on-standards/variables";
+@import "on-standards/mixins";
+
+// Reset and dependencies
+@import "on-standards/normalize";
+@import "on-standards/print";
+
+// Icons
+@import "https://s3.amazonaws.com/icomoon.io/47870/OpenNetwork/style.css";
+
+// Core CSS
+@import "on-standards/baseline";
+@import "on-standards/images";
+@import "on-standards/code";
+@import "on-standards/grid";
+@import "on-standards/block-grid";
+@import "on-standards/tables";
+@import "on-standards/forms";
+@import "on-standards/buttons";
+
+// Modules
+@import "on-standards/modules/type";
+
+// Components
+@import "on-standards/animation";
+@import "on-standards/dropdown";
+@import "on-standards/button-group";
+@import "on-standards/input-group";
+@import "on-standards/custom-forms";
+@import "on-standards/nav";
+@import "on-standards/navbar";
+@import "on-standards/card";
+@import "on-standards/breadcrumb";
+@import "on-standards/pagination";
+@import "on-standards/pager";
+@import "on-standards/tags";
+@import "on-standards/jumbotron";
+@import "on-standards/alert";
+@import "on-standards/progress";
+@import "on-standards/media";
+@import "on-standards/list-group";
+@import "on-standards/responsive-embed";
+@import "on-standards/close";
+
+// Components w/ JavaScript
+@import "on-standards/modal";
+@import "on-standards/off-canvas";
+@import "on-standards/tooltip";
+@import "on-standards/popover";
+@import "on-standards/carousel";
+
+// Utility classes
+@import "on-standards/utilities";
+@import "on-standards/utilities-background";
+@import "on-standards/utilities-spacing";
+@import "on-standards/utilities-responsive";

@@ -1,0 +1,85 @@
+// Mainfest for base colors
+
+// Gray Spectrum
+$white:               #FFFFFF !default;
+$gray-dark:           #1E1F23 !default;
+$gray:                #404041 !default;
+
+// Brand colors
+$red:                 #D02F2F !default;
+$green:               #5DB239 !default;
+$orange:              #FF9000 !default;
+$yellow:              #FFCE00 !default;
+$cyan:                #2CCCC4 !default;
+$purple:              #B546EB !default;
+$pink:                #F464D7 !default;
+$blue:                #2993E5 !default;
+
+// Tints and shades
+$gray-90:             tint($gray, 10%) !default;
+$gray-80:             tint($gray, 20%) !default;
+$gray-70:             tint($gray, 30%) !default;
+$gray-60:             tint($gray, 40%) !default;
+$gray-50:             tint($gray, 50%) !default;
+$gray-40:             tint($gray, 60%) !default;
+$gray-30:             tint($gray, 70%) !default;
+$gray-20:             tint($gray, 80%) !default;
+$gray-10:             tint($gray, 90%) !default;
+$gray-5:              tint($gray, 95%) !default;
+
+$blue-190:            shade($blue, 90%) !default;
+$blue-180:            shade($blue, 80%) !default;
+$blue-170:            shade($blue, 70%) !default;
+$blue-160:            shade($blue, 60%) !default;
+$blue-150:            shade($blue, 50%) !default;
+$blue-140:            shade($blue, 40%) !default;
+$blue-130:            shade($blue, 30%) !default;
+$blue-120:            shade($blue, 20%) !default;
+$blue-110:            shade($blue, 10%) !default;
+$blue-90:             tint($blue, 10%) !default;
+$blue-80:             tint($blue, 20%) !default;
+$blue-70:             tint($blue, 30%) !default;
+$blue-60:             tint($blue, 40%) !default;
+$blue-50:             tint($blue, 50%) !default;
+$blue-40:             tint($blue, 60%) !default;
+$blue-30:             tint($blue, 70%) !default;
+$blue-20:             tint($blue, 80%) !default;
+$blue-10:             tint($blue, 90%) !default;
+
+$green-190:           shade($green, 90%) !default;
+$green-180:           shade($green, 80%) !default;
+$green-170:           shade($green, 70%) !default;
+$green-160:           shade($green, 60%) !default;
+$green-150:           shade($green, 50%) !default;
+$green-140:           shade($green, 40%) !default;
+$green-130:           shade($green, 30%) !default;
+$green-120:           shade($green, 20%) !default;
+$green-110:           shade($green, 10%) !default;
+$green-90:            tint($green, 10%) !default;
+$green-80:            tint($green, 20%) !default;
+$green-70:            tint($green, 30%) !default;
+$green-60:            tint($green, 40%) !default;
+$green-50:            tint($green, 50%) !default;
+$green-40:            tint($green, 60%) !default;
+$green-30:            tint($green, 70%) !default;
+$green-20:            tint($green, 80%) !default;
+$green-10:            tint($green, 90%) !default;
+
+$orange-190:          shade($orange, 90%) !default;
+$orange-180:          shade($orange, 80%) !default;
+$orange-170:          shade($orange, 70%) !default;
+$orange-160:          shade($orange, 60%) !default;
+$orange-150:          shade($orange, 50%) !default;
+$orange-140:          shade($orange, 40%) !default;
+$orange-130:          shade($orange, 30%) !default;
+$orange-120:          shade($orange, 20%) !default;
+$orange-110:          shade($orange, 10%) !default;
+$orange-90:           tint($orange, 10%) !default;
+$orange-80:           tint($orange, 20%) !default;
+$orange-70:           tint($orange, 30%) !default;
+$orange-60:           tint($orange, 40%) !default;
+$orange-50:           tint($orange, 50%) !default;
+$orange-40:           tint($orange, 60%) !default;
+$orange-30:           tint($orange, 70%) !default;
+$orange-20:           tint($orange, 80%) !default;
+$orange-10:           tint($orange, 90%) !default;

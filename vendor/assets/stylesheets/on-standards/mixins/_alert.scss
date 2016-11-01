@@ -1,0 +1,18 @@
+// Alerts
+
+@mixin alert-variant($background, $body-color) {
+  background-color: $background;
+  color: $body-color;
+
+  a {
+    color: $body-color;
+  }
+
+  hr {
+    border-top-color: shade($background, 20%);
+  }
+
+  .close {
+    color: $body-color;
+  }
+}

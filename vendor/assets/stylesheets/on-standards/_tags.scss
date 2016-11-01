@@ -1,0 +1,94 @@
+// Base class
+//
+// Requires one of the contextual, color modifier classes for `color` and
+// `background-color`.
+
+.tag {
+  display: inline-block;
+  padding: 3px 8px 2px;
+  font-size: $font-size-1;
+  font-weight: $tag-font-weight;
+  line-height: 1;
+  color: $tag-color;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  background: $tag-default-bg;
+  border: 1px solid $tag-default-bg;
+  // Use a higher than normal value to ensure completely rounded edges when
+  // customizing padding or font-size on tags.
+  @include border-radius(10rem);
+
+  // Empty tags collapse automatically
+  &:empty {
+    display: none;
+  }
+}
+
+.tag-small {
+  font-size: $font-size-0;
+  padding: 2px 6px 1px;
+}
+
+// Quick fix for tags in buttons
+.button .tag {
+  position: relative;
+  top: -1px;
+}
+
+// Add hover effects, but only for links
+a.tag {
+  @include hover-focus {
+    color: $tag-link-hover-color;
+    text-decoration: none;
+    background-color: button-highlight($brand-action);
+    border-color: button-highlight($brand-action);
+    cursor: pointer;
+  }
+}
+
+
+// Colors
+//
+// Contextual variations (linked tags get darker on :hover).
+
+.tag-primary {
+  @include tag-variant($tag-primary-bg);
+}
+
+.tag-success {
+  @include tag-variant($tag-success-bg);
+}
+
+.tag-secondary {
+  background-color: $tag-secondary-bg;
+  border-color: $gray-20;
+  color: $body-color;
+}
+
+.tag-warning {
+  @include tag-variant($tag-warning-bg, $body-color);
+}
+
+.tag-danger {
+  @include tag-variant($tag-danger-bg);
+}
+
+
+// Outlined tags
+
+.tag-outline-primary {
+  @include tag-outline-variant($tag-primary-bg);
+}
+
+.tag-outline-success {
+  @include tag-outline-variant($tag-success-bg);
+}
+
+.tag-outline-warning {
+  @include tag-outline-variant($tag-warning-bg);
+}
+
+.tag-outline-danger {
+  @include tag-outline-variant($tag-danger-bg);
+}

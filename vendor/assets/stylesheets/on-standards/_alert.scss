@@ -1,0 +1,65 @@
+//
+// Base styles
+//
+
+.alert {
+  padding: $alert-padding;
+  margin-bottom: $spacer-y;
+  @include border-radius($alert-border-radius);
+  background-color: $alert-default-bg;
+  color: $alert-default-text;
+
+  // Improve alignment and spacing of inner content
+  > p,
+  > ul {
+    margin-bottom: 0;
+  }
+  > p + p {
+    margin-top: 5px;
+  }
+  a {
+    text-decoration: underline;
+    color: $alert-default-text;
+  }
+}
+
+// Headings for larger alerts
+.alert-heading {
+  // Specified to prevent conflicts of changing $headings-color
+  color: inherit;
+}
+
+
+// Dismissible alerts
+//
+// Expand the right padding and account for the close button's positioning.
+
+.alert-dismissible {
+
+  // Adjust close link position
+  .close {
+    position: relative;
+    top: -16px;
+    right: -16px;
+    color: inherit;
+    padding: 17px 16px;
+  }
+}
+
+
+// Alternate styles
+//
+// Generate contextual modifier classes for colorizing the alert.
+
+.alert-primary {
+  @include alert-variant($alert-primary-bg, $alert-primary-text);
+}
+.alert-success {
+  @include alert-variant($alert-success-bg, $alert-success-text);
+}
+.alert-warning {
+  @include alert-variant($alert-warning-bg, $alert-warning-text);
+}
+.alert-danger {
+  @include alert-variant($alert-danger-bg, $alert-danger-text);
+}

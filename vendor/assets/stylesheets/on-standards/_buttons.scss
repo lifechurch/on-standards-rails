@@ -1,0 +1,241 @@
+//
+// Base styles
+//
+
+// Some buttons share the same highlight and press states.
+$button-highlight-color: button-highlight($brand-action);
+$button-press-color:     button-press($brand-action);
+
+button,
+.button {
+  outline: none;
+  &:focus,
+  &.focus {
+    outline: none;
+  }
+}
+
+.button {
+  display: inline-block;
+  font-weight: $button-font-weight;
+  text-align: center;
+  background: $gray-20;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  cursor: default;
+  border: $input-button-border-width solid transparent;
+  @include button-size($button-padding-y, $button-padding-x, $font-size-base, $line-height, $button-border-radius);
+  @include hover-focus {
+    text-decoration: none;
+  }
+
+  &:active,
+  &.active {
+    background-image: none;
+    outline: 0;
+  }
+
+  &.disabled,
+  &:disabled {
+    cursor: $cursor-disabled;
+    opacity: .5;
+    @include box-shadow(none);
+    @include hover {
+      box-shadow: none;
+      background-color: $gray-20;
+    }
+  }
+
+  &:focus,
+  &.focus {
+    box-shadow: inset 0 0 0 1px white;
+  }
+
+  @include hover {
+    color: white;
+    background-color: $button-highlight-color;
+    border-color: $button-highlight-color;
+    box-shadow: $box-shadow-1;
+  }
+
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    color: white;
+    background-color: $button-press-color;
+    border-color: $button-press-color;
+    background-image: none;
+    box-shadow: none;
+  }
+}
+
+// Future-proof disabling of clicks on `<a>` elements
+a.button.disabled,
+fieldset[disabled] a.button {
+  pointer-events: none;
+}
+
+
+//
+// Buttons
+//
+
+.button-primary {
+  @include button-variant($button-primary-color, $button-primary-bg, $button-primary-border);
+}
+
+.button-secondary {
+  &:focus,
+  &.focus {
+    box-shadow: inset 0 0 0 1px $button-secondary-border;
+    &:hover {
+      color: white;
+      box-shadow: $box-shadow-1;
+    }
+  }
+  &:active,
+  &.active {
+    &:focus,
+    &.focus {
+      background-color: $button-press-color;
+      border-color: $button-press-color;
+      box-shadow: none;
+      color: white;
+    }
+  }
+  @include button-variant($button-secondary-color, $button-secondary-bg, $button-secondary-border);
+}
+
+//
+// Alternate buttons
+//
+
+.button-warning {
+  @include alternate-button-variant($button-warning-color, $button-warning-bg, $button-warning-border);
+}
+.button-danger {
+  @include alternate-button-variant($button-danger-color, $button-danger-bg, $button-danger-border);
+}
+.button-inverse {
+  @include alternate-button-variant($button-inverse-color, $button-inverse-bg, $button-inverse-border);
+  &:focus,
+  &.focus {
+    color: $button-inverse-color;
+    box-shadow: inset 0 0 0 1px $button-inverse-color;
+  }
+}
+
+// Remove all backgrounds
+.button-primary-outline {
+  @include button-outline-variant($button-primary-bg);
+}
+.button-warning-outline {
+  @include button-outline-variant($button-warning-bg, $body-color);
+}
+.button-danger-outline {
+  @include button-outline-variant($button-danger-bg);
+}
+
+//
+// Link buttons
+//
+
+// Make a button look and behave like a link
+.button-link {
+  font-weight: normal;
+  color: $link-color;
+  border-radius: 0;
+  transition: none;
+  cursor: pointer;
+
+  &,
+  &:active,
+  &.active,
+  &:disabled,
+  &:hover {
+    background-color: transparent;
+    box-shadow: none;
+  }
+  &,
+  &:focus,
+  &:active {
+    border-color: transparent;
+
+  }
+  @include hover {
+    border-color: transparent;
+    color: $link-hover-color;
+  }
+  @include hover-focus {
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
+    background-color: transparent;
+  }
+  &:disabled {
+    @include hover-focus {
+      color: $button-link-disabled-color;
+      text-decoration: none;
+    }
+  }
+  &.text-muted,
+  &.text-danger {
+    text-decoration: underline;
+  }
+  &.text-muted:hover {
+    color: lighten($text-muted, 10%) !important;
+  }
+  &.text-danger:hover {
+    color: lighten($brand-danger, 10%) !important;
+  }
+}
+
+
+//
+// Button Sizes
+//
+.button-xsmall {
+  // line-height: ensure proper height of button next to small input
+  @include button-size($button-padding-y-xsm, $button-padding-x-xsm, $font-size-1, $line-height-sm, $button-border-radius-sm);
+}
+.button-small {
+  // line-height: ensure proper height of button next to small input
+  @include button-size($button-padding-y-sm, $button-padding-x-sm, $font-size-1, $line-height-sm, $button-border-radius-sm);
+}
+.button-large {
+  // line-height: ensure even-numbered height of button next to large input
+  @include button-size($button-padding-y-lg, $button-padding-x-lg, $font-size-3, $line-height-lg, $button-border-radius-lg);
+}
+.button-xlarge {
+  // line-height: ensure even-numbered height of button next to large input
+  @include button-size($button-padding-y-xlg, $button-padding-x-xlg, $font-size-4, $line-height-lg, $button-border-radius-lg);
+}
+.button-xxlarge {
+  // line-height: ensure even-numbered height of button next to large input
+  @include button-size($button-padding-y-xxlg, $button-padding-x-xxlg, $font-size-5, $line-height-lg, $button-border-radius-lg);
+}
+
+
+
+//
+// Block button
+//
+
+.button-block {
+  display: block;
+  width: 100%;
+}
+
+// Vertically space out multiple block buttons
+.button-block + .button-block {
+  margin-top: 5px;
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  &.button-block {
+    width: 100%;
+  }
+}

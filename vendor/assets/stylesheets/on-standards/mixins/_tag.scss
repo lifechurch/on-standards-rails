@@ -1,0 +1,30 @@
+// Tags
+
+@mixin tag-variant($color, $text-color: $white, $border-color: $color) {
+  background-color: $color;
+  border-color: $border-color;
+  color: $text-color;
+
+  &[href] {
+    @include hover-focus {
+      background-color: tint($color, 20%);
+      border-color: tint($border-color, 20%);
+      color: $text-color;
+    }
+  }
+}
+
+
+@mixin tag-outline-variant($color, $text-color: $color, $border-color: $color) {
+  background-color: transparent;
+  border-color: $border-color;
+  color: $text-color;
+
+  &[href] {
+    @include hover-focus {
+      background-color: tint($color, 20%);
+      border-color: tint($color, 20%);
+      color: $white;
+    }
+  }
+}

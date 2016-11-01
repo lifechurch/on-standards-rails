@@ -1,0 +1,11 @@
+@mixin no-flexbox {
+  html.no-flexbox &{
+    @content;
+  }
+}
+
+@mixin flexbox {
+  html.flexbox &{
+    @content;
+  }
+}
