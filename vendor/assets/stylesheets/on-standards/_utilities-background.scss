@@ -1,19 +1,22 @@
 //
 // Contextual backgrounds
+// Default text color is: #fff.
 //
-
-.bg-faded {
-  background-color: $gray-10;
-}
 
 @include bg-variant('.bg-primary', $brand-primary);
 
 @include bg-variant('.bg-success', $brand-success);
 
-@include bg-variant('.bg-info', $brand-info, $body-color);
-
 @include bg-variant('.bg-warning', $brand-warning, $body-color);
 
 @include bg-variant('.bg-danger', $brand-danger);
 
-@include bg-variant('.bg-gray', $body-color);
+@include bg-variant('.bg-gray-dark', $gray-dark);
+
+@include bg-variant('.bg-gray', $gray);
+
+@include bg-variant('.bg-gray-20', $gray-20, $body-color);
+
+@include bg-variant('.bg-gray-10', $gray-10, $body-color);
+
+@include bg-variant('.bg-gray-5', $gray-5, $body-color);

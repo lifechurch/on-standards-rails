@@ -7,8 +7,11 @@
   display: block;
   margin-bottom: $card-spacer-y;
   background-color: $card-bg;
-  border: $card-border-width solid $card-border-color;
+  box-shadow: $box-shadow-1;
   @include border-radius($card-border-radius);
+  &.card-border {
+    border: $card-border-width solid $card-border-color;
+  }
 }
 
 .card-block {
@@ -70,7 +73,7 @@
 .card-header {
   padding: $card-spacer-y $card-spacer-x;
   background-color: $card-cap-bg;
-  border-bottom: $card-border-width solid $card-border-color;
+  border-bottom: $card-border-width solid $gray-10;
 
   &:first-child {
     @include border-radius($card-border-radius-inner $card-border-radius-inner 0 0);
@@ -80,7 +83,7 @@
 .card-footer {
   padding: $card-spacer-y $card-spacer-x;
   background-color: $card-cap-bg;
-  border-top: $card-border-width solid $card-border-color;
+  border-top: $card-border-width solid $gray-10;
 
   &:last-child {
     @include border-radius(0 0 $card-border-radius-inner $card-border-radius-inner);
@@ -97,9 +100,6 @@
 }
 .card-success {
   @include card-variant($brand-success, $brand-success);
-}
-.card-info {
-  @include card-variant($brand-info, $brand-info);
 }
 .card-warning {
   @include card-variant($brand-warning, $brand-warning);
@@ -152,12 +152,15 @@
   @include border-radius(.25rem);
 }
 .card-img-overlay {
+  @include card-inverse;
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   padding: 1.25rem;
+  background: $overlay;
+  border-radius: $card-border-radius;
 }
 
 
@@ -165,9 +168,11 @@
 // Card image caps
 .card-img-top {
   @include border-radius($card-border-radius-inner $card-border-radius-inner 0 0);
+  width: 100%;
 }
 .card-img-bottom {
   @include border-radius(0 0 $card-border-radius-inner $card-border-radius-inner);
+  width: 100%;
 }
 
 
@@ -216,6 +221,7 @@
 
 @include media-breakpoint-up(sm) {
   .card-group {
+    box-shadow: $box-shadow-1;
     @if $enable-flex {
       display: flex;
       flex-flow: row wrap;
@@ -226,6 +232,8 @@
     }
 
     .card {
+      box-shadow: none;
+      border-right: 1px solid $gray-10;
       @if $enable-flex {
         flex: 1 0 0;
       } @else {
@@ -251,6 +259,7 @@
           }
         }
         &:last-child {
+          border-right: 0;
           @include border-left-radius(0);
 
           .card-img-top {

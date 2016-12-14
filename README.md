@@ -34,8 +34,16 @@ add typekit to application.html.haml
 
 ## Change Log
 
+### V2.0.0.alpha.2
+- Fixes ES6 bugs
+- Adds Dependancies sass ~> 3.4, sass-rails 5.0.3
+
+### V2.0.0.alpha.1
+- Fixes Gem Deployment Bug
+
 ### V2.0.0-alpha
 - Migrates to use new Bootstrap V4 as Base
+- Removes foundation, compass 
 - Inital pre-release for Develop.Me initial revamp
 
 ### V1.5.1

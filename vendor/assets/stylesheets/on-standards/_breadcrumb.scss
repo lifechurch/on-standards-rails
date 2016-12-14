@@ -1,17 +1,20 @@
 .breadcrumb {
-  padding: $breadcrumb-padding-vertical $breadcrumb-padding-horizontal;
   margin-bottom: $spacer-y;
+  padding: 0;
   list-style: none;
-  background-color: $breadcrumb-bg;
   @include border-radius($border-radius);
   @include clearfix;
 
   > li {
-    float: left;
+    display: inline-block;
+    font-size: $font-size-1;
+    a {
+      color: $breadcrumb-divider-color;
+    }
 
     + li::before {
-      padding-right: .5rem;
-      padding-left: .5rem;
+      padding-right: 6px;
+      padding-left: 2px;
       color: $breadcrumb-divider-color;
       content: "#{$breadcrumb-divider}";
     }
@@ -19,5 +22,11 @@
 
   > .active {
     color: $breadcrumb-active-color;
+    display: block;
+    margin-top: 1px;
+    @extend h1;
+    &::before {
+      display: none;
+    }
   }
 }

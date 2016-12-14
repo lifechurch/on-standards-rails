@@ -102,18 +102,18 @@
       line-height: $input-height;
     }
 
-    &.input-xsm,
-    .input-group-xsm &.form-control {
+    &.input-xsmall,
+    .input-group-xsmall &.form-control {
       line-height: $input-height-xsm;
     }
 
-    &.input-sm,
-    .input-group-sm &.form-control {
+    &.input-small,
+    .input-group-small &.form-control {
       line-height: $input-height-sm;
     }
 
-    &.input-lg,
-    .input-group-lg &.form-control {
+    &.input-large,
+    .input-group-large &.form-control {
       line-height: $input-height-lg;
     }
   }
@@ -132,9 +132,9 @@
   // Remove default margin from `p`
   margin-bottom: 0;
 
-  &.form-control-xsm,
-  &.form-control-sm,
-  &.form-control-lg {
+  &.form-control-xsmall,
+  &.form-control-small,
+  &.form-control-large {
     padding-right: 0;
     padding-left: 0;
   }
@@ -149,25 +149,38 @@
 // The `.form-group-* form-control` variations are sadly duplicated to avoid the
 // issue documented in https://github.com/twbs/bootstrap/issues/15074.
 
-.form-control-xsm {
+.form-control-xsmall {
   padding: ($input-padding-y-xsm + .0625rem) $input-padding-x-xsm $input-padding-y-xsm $input-padding-x-xsm;
   font-size: $font-size-sm;
   line-height: $line-height-sm;
   @include border-radius($input-border-radius-sm);
 }
 
-.form-control-sm {
+.form-control-small {
   padding: ($input-padding-y-sm + .0625rem) $input-padding-x-sm $input-padding-y-sm $input-padding-x-sm;
   font-size: $font-size-sm;
   line-height: $line-height-sm;
   @include border-radius($input-border-radius-sm);
 }
 
-.form-control-lg {
+.form-control-large {
   padding: $input-padding-y-lg $input-padding-x-lg;
   font-size: $font-size-lg;
   line-height: $line-height-lg;
   @include border-radius($input-border-radius-lg);
+}
+
+select {
+  height: 2.25rem;
+  &.form-control-large {
+    height: 3rem;
+  }
+  &.form-control-small {
+    height: 1.75rem;
+  }
+  &.form-control-xsmall {
+    height: 1.25rem;
+  }
 }
 
 

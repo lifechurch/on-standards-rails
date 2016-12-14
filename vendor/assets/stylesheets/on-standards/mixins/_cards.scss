@@ -28,7 +28,7 @@
   .card-link,
   .card-text,
   .card-blockquote > footer {
-    color: rgba(255,255,255,.65);
+    color: #fff;
   }
   .card-link {
     @include hover-focus {

@@ -113,6 +113,11 @@ $link-decoration:            none !default;
 $link-hover-color:           lighten($link-color, 10%) !default;
 $link-hover-decoration:      underline !default;
 
+// Line color
+//
+// Color for typical lines and rules
+
+$line-color:                 $gray-20 !default;
 
 // Grid breakpoints
 //
@@ -150,7 +155,7 @@ $container-max-widths: (
 // Set the number of columns and specify the width of the gutters.
 
 $grid-columns:               12 !default;
-$grid-gutter-width:          1rem !default;
+$grid-gutter-width:          2rem !default;
 
 
 // Typography
@@ -220,7 +225,7 @@ $abbr-border-color:           $gray-50 !default;
 
 $blockquote-small-color:      $gray-50 !default;
 $blockquote-font-size:        $font-size-3 !default;
-$blockquote-border-color:     $gray-20 !default;
+$blockquote-border-color:     $brand-primary !default;
 
 $hr-border-color:             $gray-20 !default;
 $hr-border-width:             $border-width !default;
@@ -528,13 +533,13 @@ $state-danger-border:            darken($state-danger-bg, 5%) !default;
 
 
 // Cards
-$card-spacer-x:            1.25rem !default;
-$card-spacer-y:            .75rem !default;
+$card-spacer-x:            1rem !default;
+$card-spacer-y:            1rem !default;
 $card-border-width:        1px !default;
-$card-border-radius:       $border-radius !default;
-$card-border-color:        #e5e5e5 !default;
+$card-border-radius:       $border-radius-lg !default;
+$card-border-color:        $gray-20 !default; // TODO: Change $gray-20 to $line-color
 $card-border-radius-inner: $card-border-radius !default;
-$card-cap-bg:              #f5f5f5 !default;
+$card-cap-bg:              $gray-5 !default;
 $card-bg:                  #fff !default;
 
 $card-link-hover-color:    #fff !default;
@@ -544,10 +549,10 @@ $card-link-hover-color:    #fff !default;
 
 $tooltip-max-width:           200px !default;
 $tooltip-color:               #fff !default;
-$tooltip-bg:                  #000 !default;
-$tooltip-opacity:             .9 !default;
+$tooltip-bg:                  $overlay-dark !default;
+$tooltip-opacity:             1 !default;
 
-$tooltip-arrow-width:         5px !default;
+$tooltip-arrow-width:         4px !default;
 $tooltip-arrow-color:         $tooltip-bg !default;
 
 
@@ -682,12 +687,8 @@ $thumbnail-border-radius:     $border-radius !default;
 
 // Breadcrumbs
 
-$breadcrumb-padding-vertical:   .75rem !default;
-$breadcrumb-padding-horizontal: 1rem !default;
-
-$breadcrumb-bg:                 $gray-50 !default;
 $breadcrumb-divider-color:      $gray-50 !default;
-$breadcrumb-active-color:       $gray-50 !default;
+$breadcrumb-active-color:       $body-color !default;
 $breadcrumb-divider:            "/" !default;
 
 

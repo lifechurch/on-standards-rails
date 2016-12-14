@@ -1,0 +1,33 @@
+// Font Base
+//
+// Use these mixins when needing to reference a different font family.
+// Use this mixin in a ':before' or ':after' to add Font Awesome characters.
+// You must add the appropriate icon in the 'content' decleration. (e.g. content: "\f00c")
+
+// Icomoon Awesome
+@mixin icomoon-base {
+  display: inline-block;
+  // use !important to prevent issues with browser extensions that change fonts.
+  font: normal normal normal 16px/1'icomoon' !important;
+  speak: none;
+  font-size: inherit;
+  text-transform: none;
+  text-rendering: auto;
+  // Better Font Rendering
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Font Awesome
+@mixin font-awesome-base {
+  display: inline-block;
+  // use !important to prevent issues with browser extensions that change fonts.
+  font: normal normal normal 16px/1 FontAwesome !important;
+  speak: none;
+  font-size: inherit;
+  text-transform: none;
+  text-rendering: auto;
+  // Better Font Rendering
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

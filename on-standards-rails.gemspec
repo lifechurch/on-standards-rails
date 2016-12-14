@@ -19,7 +19,8 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 1.4"
-  spec.add_dependency('sass-rails', '>= 0')
-  spec.add_dependency('rake', '>= 0')
+  spec.add_dependency('sass', ['~> 3.4'])
+  spec.add_dependency('sass-rails', ['~> 5.0.3'])
+  spec.add_development_dependency "rake"
 end
 
