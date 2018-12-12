@@ -253,56 +253,56 @@ button, .button
   color: $font-color
   cursor: pointer
   vertical-align: middle
-  +transition(none)
+  transition: none
   &:active, &:hover, &:focus
     outline: none
-    +box-shadow($button-hover-shadow)
+    box-shadow: $button-hover-shadow
     background-color: lighten($gray-lighter, 2%)
     color: $font-color
     text-decoration: none
   &:active
-    +box-shadow(none)
+    box-shadow: none
     background-color: $gray-lighter
     color: $font-color
 
   &:disabled, &.disabled
-    +opacity(0.45)
+    opacity: 0.45
     cursor: default
     color: $gray
     background-color: $gray-lighter
     &:hover
-      +box-shadow(none)
+      box-shadow: none
 
   &.primary
     background-color: $primary-color
     color: $primary-button-font-color
     &:hover, &:focus
       background-color: lighten($primary-color, 7%)
-      +box-shadow($button-hover-shadow)
+      box-shadow: $button-hover-shadow
     &:active
       background-color: $primary-color
-      +box-shadow(none)
+      box-shadow: none
     &:disabled, &.disabled
       background-color: $primary-color
 
   &.white
     background-color: white
-    +box-shadow(inset 0 0 0 1px $gray-lighter)
+    box-shadow: inset 0 0 0 1px $gray-lighter
     color: $gray-light
     &:hover
       background-color: lighten($primary-color, 7%)
       color: $primary-button-font-color
-      +box-shadow($button-hover-shadow)
+      box-shadow: $button-hover-shadow
     &:active
       background-color: $primary-color
       color: $primary-button-font-color
-      +box-shadow(none)
+      box-shadow: none
     &:disabled, &.disabled
       color: $gray-lighter
-      +opacity(1)
+      opacity: 1
       &:hover
         background-color: white
-        +box-shadow(inset 0 0 0 1px $gray-lighter)
+        box-shadow: inset 0 0 0 1px $gray-lighter
 
   &.large
     padding: 0 1.5em
@@ -373,12 +373,12 @@ textarea,
   color: $font-color
   background: white
   border-radius: $global-radius
-  +box-shadow($input-shadow)
-  +transition(none)
+  box-shadow: $input-shadow
+  transition: none
   &:focus
     border: 1px solid $primary-color
     outline: none
-    +box-shadow(none)
+    box-shadow: none
 
 select
   display: block
@@ -393,11 +393,11 @@ input[type="submit"]
   &:hover, &:focus
     color: $primary-button-font-color
     background-color: lighten($primary-color, 7%)
-    +box-shadow($button-hover-shadow)
+    box-shadow: $button-hover-shadow
   &:active
     color: $primary-button-font-color
     background-color: $primary-color
-    +box-shadow(none)
+    box-shadow: none
   &:disabled, &.disabled
     background-color: $primary-color
 
@@ -411,8 +411,8 @@ input[type="submit"]
 .chosen-container
   display: block
   .chosen-drop
-    +box-shadow($global-shadow)
-    +border-radius($global-radius)
+    box-shadow: $global-shadow
+    border-radius: $global-radius
     z-index: 2
     margin-top: 2px
     border: 1px solid $gray-lighter
@@ -429,7 +429,7 @@ input[type="submit"]
       &.highlighted
         background-color: $gray-lightest
         color: $chosen-hover-highlight-color
-        +background-image(none)
+        background-image: none
     li.group-result
       padding-left: 0.5rem
     li.group-option
@@ -465,7 +465,7 @@ input[type="submit"]
     input[type="text"]
       margin: 0
       border: 1px solid $gray-lighter
-      +border-radius($global-radius)
+      border-radius: $global-radius
       background-image: none !important
       font-size: 0.875rem
       min-height: 1.875rem
@@ -488,7 +488,7 @@ input[type="submit"]
       line-height: 24px
       font-size: 0.875rem
       background: $gray-lighter
-      +box-shadow(none)
+      box-shadow: none
       border-radius: 2rem
       span
         position: relative
@@ -522,13 +522,13 @@ input[type="submit"]
 .chosen-container-active
   .chosen-single, .chosen-choices
     border-color: $primary-color
-    +box-shadow(none)
+    box-shadow: none
   &.chosen-with-drop
     .chosen-single,
     .chosen-choices
-      +background-image(none)
+      background-image: none
       border-color: $primary-color
-      +border-radius($global-radius)
+      border-radius: $global-radius
       div b:before
         content: "\f0d8"
         line-height: 2rem
@@ -981,13 +981,13 @@ a.tag
 // Pagination // -------------------------------------------
 .pagination
   display: inline-block
-  +border-radius($global-radius)
+  border-radius: $global-radius
   span
     display: inline
   span:first-of-type a
-    +border-radius($global-radius 0 0 $global-radius)
+    border-radius: $global-radius 0 0 $global-radius
   span:last-of-type a
-    +border-radius(0 $global-radius $global-radius 0)
+    border-radius: 0 $global-radius $global-radius 0
   a, .gap, .current
     text-decoration: none
     position: relative
@@ -1025,7 +1025,7 @@ a.tag
   border-radius: $global-radius
   padding: 0.75rem 1rem
   font-size: 0.875rem
-  +box-shadow($global-shadow)
+  box-shadow: $global-shadow
   line-height: 1.4
   .flash-close
     &:after
@@ -1037,7 +1037,7 @@ a.tag
     margin-top: -0.325rem
     margin-left: 1rem
     background: transparent
-    +box-shadow(inset 0 0 0 1px white)
+    box-shadow: inset 0 0 0 1px white
     color: white
     &:hover
       color: $font-color
